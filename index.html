@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Riaz Aslam — Portfolio</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Portfolio of Riaz Aslam — Software Engineering student, web developer, AI enthusiast.">
+</head>
+<body>
+
+  <!-- ====== NAV / HEADER ====== -->
+  <header class="site-header">
+    <div class="wrap header-row">
+      <div class="brand">
+        <div class="brand-photo" id="brand-photo">
+          <!-- Replace profile-photo.jpg with your own image file -->
+          <img src="profile-photo.jpg" alt="Riaz Aslam" onerror="this.style.opacity='.08'">
+        </div>
+        <div>
+          <h1 class="brand-name">Riaz Aslam</h1>
+          <p class="brand-sub">Software Engineering Student · Web Developer · AI Enthusiast</p>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== HERO ====== -->
+  <section id="hero" class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-left">
+        <div class="accent-bubble" aria-hidden="true"></div>
+        <h2 class="eyebrow">Hello — I'm</h2>
+        <h1 class="hero-title">Riaz <span class="accent">Aslam</span></h1>
+        <p class="hero-lead">
+          Software Engineering student at COMSATS (CUI’28). I build clean, accessible and responsive web interfaces,
+          blend creative content with code, and explore AI & advanced Python.
+        </p>
+
+        <div class="cta-row">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn ghost" id="downloadResume" href="Riaz_Aslam_Portfolio.pdf" download="Riaz_Aslam_Portfolio.pdf" rel="noopener">Download Resume</a>
+        </div>
+
+        <div class="quick-links">
+          <a href="https://github.com/riazaslam029" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="mailto:riazaslam029@gmail.com">
+            <i class="far fa-envelope"></i> riazaslam029@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- stylized card with highlights -->
+        <div class="card profile-card reveal">
+          <div class="card-top">
+            <h3>Top Skills</h3>
+            <div class="skill-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>C++</span>
+              <span>Python</span>
+              <span>Git</span>
+              <span>OOP</span>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <h4>Quick facts</h4>
+            <ul class="facts">
+              <li><strong>University:</strong> COMSATS University, Lahore (Software Engineering)</li>
+              <li><strong>Role:</strong> Social Co-Lead @ GDGoC (Google Developer Group on Campus)</li>
+              <li><strong>Interests:</strong> AI, full-stack concepts, creative tech & video production</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- color strip showing certifications -->
+        <div class="card creds reveal">
+          <h4>Certifications & Awards</h4>
+          <div id="cert-list">
+            <ul>
+              <li>Introduction to Git & GitHub</li>
+              <li>Google AI Essentials</li>
+              <li>Certificate of Appreciation — Hashtag Heros</li>
+              <li>Certificate of Appreciation in 404 Squad</li>
+            </ul>
+            <p style="margin-top:8px;font-size:0.9rem">More on <a href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank" rel="noopener">LinkedIn</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ABOUT ====== -->
+  <section id="about" class="section reveal">
+    <div class="wrap section-grid">
+      <div class="col">
+        <h2>About Me</h2>
+        <p>
+          I am a Software Engineering student at COMSATS University (CUI’28) with a strong interest in software development,
+          problem-solving and creative technologies. I focus on building efficient, accessible user interfaces and exploring AI
+          and Python to add smarter features.
+        </p>
+
+        <p>
+          I combine technical skills (C++, Python, HTML/CSS/JS) with content creation and team leadership — previously contributing
+          as Social Co-Lead at GDGoC and volunteering at TechnoVerse CUI.
+        </p>
+
+        <a class="btn outline" href="#contact">Hire / Contact</a>
+      </div>
+
+      <div class="col">
+        <h3>Contact</h3>
+        <div class="contact-cards">
+          <div><i class="far fa-envelope"></i><a href="mailto:riazaslam029@gmail.com">riazaslam029@gmail.com</a></div>
+          <div><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank">LinkedIn</a></div>
+          <div><i class="fab fa-github"></i><a href="https://github.com/riazaslam029" target="_blank">GitHub</a></div>
+          <div><i class="fas fa-map-marker-alt"></i>Lahore, Punjab, Pakistan</div>
+        </div>
+
+        <h3>Creative</h3>
+        <p>Video editing, social content creation and visual storytelling — I use these skills to present technical work clearly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SKILLS ====== -->
+  <section id="skills" class="section alt reveal">
+    <div class="wrap">
+      <h2 class="section-heading">Skills & Tools</h2>
+
+      <div class="skills-grid">
+        <!-- skill card -->
+        <div class="skill reveal">
+          <div class="skill-head"><i class="fab fa-html5"></i><strong>HTML5</strong></div>
+          <div class="skill-bar"><span style="width:92%"></span></div>
+          <p class="skill-meta">Semantic markup, accessibility, forms</p>
+        </div>
+
+        <div class="skill reveal">
+          <div class="skill-head"><i class="fab fa-css3-alt"></i><strong>CSS3</strong></div>
+          <div class="skill-bar"><span style="width:90%"></span></div>
+          <p class="skill-meta">Responsive layouts, Flexbox, Grid, animations</p>
+        </div>
+
+        <div class="skill reveal">
+          <div class="skill-head"><i class="fab fa-js-square"></i><strong>JavaScript (Vanilla)</strong></div>
+          <div class="skill-bar"><span style="width:85%"></span></div>
+          <p class="skill-meta">DOM, ES6, localStorage, modular code</p>
+        </div>
+
+        <div class="skill reveal">
+          <div class="skill-head"><i class="fas fa-code"></i><strong>C++ & C</strong></div>
+          <div class="skill-bar"><span style="width:80%"></span></div>
+          <p class="skill-meta">OOP, algorithms, data structures</p>
+        </div>
+
+        <div class="skill reveal">
+          <div class="skill-head"><i class="fab fa-python"></i><strong>Python</strong></div>
+          <div class="skill-bar"><span style="width:75%"></span></div>
+          <p class="skill-meta">Scripting, basic AI & ML experiments</p>
+        </div>
+
+        <div class="skill reveal">
+          <div class="skill-head"><i class="fab fa-git-alt"></i><strong>Git & GitHub</strong></div>
+          <div class="skill-bar"><span style="width:88%"></span></div>
+          <p class="skill-meta">Version control, collaborative workflows</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROJECTS (includes e-commerce) ====== -->
+  <section id="projects" class="section reveal">
+    <div class="wrap">
+      <h2 class="section-heading">Selected Projects</h2>
+
+      <!-- project grid -->
+      <div class="projects-grid">
+
+        <!-- Project: E-commerce (simplified showcase) -->
+        <article class="project-card project-ecom reveal" data-tech="HTML,CSS,JS">
+          <div class="project-header">
+            <h3>E-Commerce Demo (Front-end Shopping App)</h3>
+            <div class="label">Featured</div>
+          </div>
+          <p class="project-desc">
+            Front-end e-commerce demo showcasing product listing, filters and cart interactions. Interactive demo removed
+            from the public site — source and screenshots are available on GitHub.
+          </p>
+
+          <ul class="project-details">
+            <li><strong>Role:</strong> Lead developer (frontend, Backend)</li>
+            <li><strong>Stack:</strong> Java, JavaFX (no frameworks)</li>
+          </ul>
+
+          
+
+          <div class="project-actions">
+            <a class="btn ghost small" href="https://github.com/riazaslam029" target="_blank">View Source</a>
+          </div>
+        </article>
+
+        <!-- Project: Portfolio repo (this site) -->
+        <article class="project-card reveal" data-tech="HTML,CSS,JS">
+          <div class="project-header">
+            <h3>Personal Portfolio (This Site)</h3>
+            <div class="label">Web</div>
+          </div>
+          <p class="project-desc">This live portfolio — responsive, accessible and modern — to showcase projects, resume and contact options.</p>
+          <ul class="project-details">
+            <li><strong>Stack:</strong> HTML, CSS, JavaScript</li>
+            <li><strong>Link:</strong> <a href="https://github.com/riazaslam029" target="_blank">github.com/riazaslam029</a></li>
+          </ul>
+          <div class="project-actions">
+            <a class="btn ghost small" href="https://github.com/riazaslam029" target="_blank">Open GitHub</a>
+          </div>
+        </article>
+
+        <!-- Placeholder for other projects discovered on your GitHub -->
+        <article class="project-card reveal" data-tech="C++,Python">
+          <div class="project-header">
+            <h3>Algorithms & C++ Projects</h3>
+            <div class="label">C++</div>
+          </div>
+          <p class="project-desc">Collection of algorithm implementations and coursework in C++ — data structures, small utilities and problem solving examples.</p>
+          <div class="project-actions">
+            <a class="btn ghost small" href="https://github.com/riazaslam029" target="_blank">Explore Repositories</a>
+          </div>
+        </article>
+
+      </div> <!-- /projects-grid -->
+
+      <!-- GitHub Projects (populated by script.js) -->
+      <div style="margin-top:28px" class="reveal">
+        <h3 style="margin-bottom:10px">Live GitHub Projects</h3>
+        <div id="github-projects" class="projects-grid">
+          <!-- JS will inject repo cards here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== E-COMMERCE DEMO (Simplified showcase) ====== -->
+  <!-- Interactive demo removed for a cleaner, professional presentation.
+       Show link to source instead. -->
+  <section id="ecom-demo" class="section alt demo-section reveal">
+    <div class="wrap">
+      <h2 class="section-heading">E-Commerce Demo (Link)</h2>
+      <p class="muted">Below a link to the source repository.</p>
+
+      
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+        <a class="btn primary" href="https://github.com/riazaslam029" target="_blank" rel="noopener">View Source on GitHub</a>
+        <a class="btn ghost" href="#projects">Back to Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== EXPERIENCE ====== -->
+  <section id="experience" class="section reveal">
+    <div class="wrap">
+      <h2 class="section-heading">Experience & Education</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="ti-left">
+            <h4>Social Co-Lead — GDGoC, COMSATS</h4>
+            <span class="muted">September 2025 — Present</span>
+          </div>
+          <div class="ti-right">
+            <p>Co-leading community outreach and social activities for the campus Google Developer Group — content strategy, event promotion and collaboration.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="ti-left">
+            <h4>Member — Tech Hierarchy</h4>
+            <span class="muted">September 2024 — October 2025</span>
+          </div>
+          <div class="ti-right"><p>Active member contributing to technical events and workshops.</p></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="ti-left">
+            <h4>Freelance Content Creator</h4>
+            <span class="muted">Sep 2024 — July 2025</span>
+          </div>
+          <div class="ti-right"><p>Created social content and video edits to support client/educational promotion.</p></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="ti-left">
+            <h4>Education</h4>
+            <span class="muted">COMSATS University Lahore — Software Engineering (2024–2028)</span>
+          </div>
+          <div class="ti-right"></div>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section id="contact" class="section alt reveal">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 class="section-heading">Get in Touch</h2>
+        <p>If you'd like to discuss a role, internship or project — email me or open a GitHub issue on any repo.</p>
+
+        <div class="contact-card">
+          <div><i class="far fa-envelope"></i><a href="mailto:riazaslam029@gmail.com">riazaslam029@gmail.com</a></div>
+          <div><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank">LinkedIn</a></div>
+          <div><i class="fab fa-github"></i><a href="https://github.com/riazaslam029" target="_blank">GitHub</a></div>
+        </div>
+      </div>
+
+      <form id="contactForm" class="contact-form" aria-label="Contact form">
+        <label for="cname">Name</label>
+        <input id="cname" name="name" type="text" placeholder="Your name" required>
+
+        <label for="cemail">Email</label>
+        <input id="cemail" name="email" type="email" placeholder="you@example.com" required>
+
+        <label for="cmessage">Message</label>
+        <textarea id="cmessage" name="message" rows="5" placeholder="How can I help?" required></textarea>
+
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Send Message</button>
+          <button class="btn ghost" type="reset">Reset</button>
+        </div>
+
+        <div id="contactResult" class="muted tiny" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <div>&copy; <span id="year"></span> Riaz Aslam</div>
+      <div class="footer-links">
+        <a href="https://github.com/riazaslam029" target="_blank">GitHub</a>
+        <a href="Profile.pdf" target="_blank">Resume</a>
+        <a href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JS -->
+  <script src="script.js"></script>
+</body>
+</html>
