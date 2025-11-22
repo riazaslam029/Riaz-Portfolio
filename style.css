@@ -111,7 +111,9 @@ body {
   height: 58px;
   border-radius: 8px;
   object-fit: cover;
-  border: 2px solid rgba(96,240,215,0.12);
+  border: 3px solid transparent;
+  background: linear-gradient(90deg, var(--accent), var(--accent4));
+  padding: 2px;
 }
 
 .brand-name {
@@ -147,7 +149,12 @@ body {
 
 .hero-title {
   font-size: 2.6rem;
-  color: var(--text);
+  color: var(--accent);
+}
+.eyebrow {
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 .accent {
   color: var(--accent);
@@ -172,9 +179,9 @@ body {
 }
 
 .btn.primary {
-  background: linear-gradient(90deg, rgba(124,108,255,0.95), rgba(96,240,215,0.95));
+  background: linear-gradient(90deg, var(--accent), var(--accent4));
   color: #071017;
-  box-shadow: 0 8px 30px rgba(96,240,215,0.08), 0 3px 10px rgba(12,16,22,0.6) inset;
+  box-shadow: 0 12px 40px rgba(79,140,255,0.12), 0 3px 10px rgba(255,255,255,0.6) inset;
 }
 
 .btn.primary:hover {
@@ -188,8 +195,24 @@ body {
 }
 
 .btn.ghost:hover {
-  background: rgba(124,108,255,0.06);
+  background: rgba(79,140,255,0.06);
   color: var(--accent);
+}
+
+/* Decorative accent bar on the left of sections */
+.section {
+  position: relative;
+}
+.section::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 20px;
+  width: 6px;
+  height: calc(100% - 40px);
+  background: linear-gradient(180deg, var(--accent), var(--accent3));
+  border-radius: 8px;
+  opacity: 0.9;
 }
 
 /* SOCIAL LINKS */
@@ -221,17 +244,28 @@ body {
   background: #fff;
   border-radius: 0 0 40px 40px;
   margin-bottom: 24px;
+}
+
 /* Alternate section with color */
 .section.alt {
   background: linear-gradient(120deg, #fffbe6 60%, #ffe6fa 100%);
   border-radius: 40px 40px 0 0;
-}
 }
 
 .section-heading {
   text-align: center;
   font-size: 1.6rem;
   color: var(--text);
+}
+
+.section-heading::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 6px;
+  margin: 10px auto 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent4));
 }
 
 .contact-cards div {
@@ -257,6 +291,19 @@ body {
   border-radius: var(--radius);
   border: 1px solid #e3e8f0;
   transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.skill-tags {
+  display:flex;
+  gap: 8px;
+  flex-wrap:wrap;
+}
+.skill-tags span {
+  background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:600;
+  color: var(--text);
 }
 
 .skill:hover {
