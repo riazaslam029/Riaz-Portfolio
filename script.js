@@ -245,29 +245,75 @@ function wireContactForm(){
       result.style.color = 'crimson';
       return;
     }
+    // Configuration for contact submission.
+    // Set `CONTACT_CONFIG.formspreeEndpoint` to your Formspree endpoint (e.g. https://formspree.io/f/yourId)
+    // or leave as null to use the mailto fallback.
+    const CONTACT_CONFIG = window.CONTACT_CONFIG || {
+      provider: 'auto', // 'formspree' | 'mailto' | 'auto'
+      formspreeEndpoint: '' // <-- set your Formspree endpoint here
+    };
 
-    // Try to open user's email client to send an email to the portfolio owner (mailto fallback).
-    const to = 'riazaslam029@gmail.com';
-    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const bodyLines = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      '',
-      message,
-      '',
-      `---\nSent from portfolio contact form`
-    ];
-    const body = encodeURIComponent(bodyLines.join('\n'));
-    const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
-
-    // Attempt to open mail client. This is a client-side fallback; for reliable delivery
-    // configure a backend or EmailJS/Formspree.
-    window.location.href = mailto;
-    result.style.color = 'green';
-    result.textContent = 'Opening your email client to send the message...';
-    form.reset();
-    setTimeout(()=> result.textContent = '', 6000);
+    // Use Formspree if configured; otherwise fallback to opening the user's mail client.
+    if(CONTACT_CONFIG.formspreeEndpoint && CONTACT_CONFIG.provider !== 'mailto'){
+      // Submit via fetch using FormData (works with Formspree free endpoint)
+      result.style.color = 'inherit';
+      result.textContent = 'Sending message...';
+      const fd = new FormData(form);
+      // Add an explicit field for recipient (not required for Formspree but kept for clarity)
+      fd.append('to', 'riazaslam029@gmail.com');
+      fetch(CONTACT_CONFIG.formspreeEndpoint, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: fd
+      }).then(async (res) => {
+        if(res.ok){
+          result.style.color = 'green';
+          result.textContent = 'Message sent — thank you!';
+          form.reset();
+          setTimeout(()=> result.textContent = '', 6000);
+        }else{
+          // Try to read error info
+          let json;
+          try{ json = await res.json(); }catch(e){}
+          console.warn('Formspree error', res.status, json);
+          result.style.color = 'crimson';
+          result.textContent = 'Could not send message. Falling back to email client...';
+          // fallback to mailto after short delay
+          setTimeout(()=> fallbackToMailto(name, email, message, result, form), 1200);
+        }
+      }).catch(err=>{
+        console.warn('Contact submit error', err);
+        result.style.color = 'crimson';
+        result.textContent = 'Error sending message. Opening email client...';
+        setTimeout(()=> fallbackToMailto(name, email, message, result, form), 900);
+      });
+    }else{
+      // No provider configured — fallback to mailto
+      fallbackToMailto(name, email, message, result, form);
+    }
   });
+}
+
+// Helper to open user's mail client if serverless provider isn't configured or fails.
+function fallbackToMailto(name, email, message, resultEl, formEl){
+  const to = 'riazaslam029@gmail.com';
+  const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+  const bodyLines = [
+    `Name: ${name}`,
+    `Email: ${email}`,
+    '',
+    message,
+    '',
+    `---\nSent from portfolio contact form`
+  ];
+  const body = encodeURIComponent(bodyLines.join('\n'));
+  const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+  // Opening mail client — this requires user's client.
+  window.location.href = mailto;
+  resultEl.style.color = 'green';
+  resultEl.textContent = 'Opening your email client to send the message...';
+  formEl.reset();
+  setTimeout(()=> resultEl.textContent = '', 6000);
 }
 
 /* ----------- GitHub project loader (public repos) ----------- */

@@ -375,6 +375,15 @@
   </footer>
 
   <!-- Main JS -->
+  <!-- Contact configuration: set your Formspree endpoint to enable automatic delivery.
+       Example: window.CONTACT_CONFIG = { provider: 'formspree', formspreeEndpoint: 'https://formspree.io/f/abcd1234' };
+       If left empty, the form will fall back to opening the visitor's mail client. -->
+  <script>
+    window.CONTACT_CONFIG = window.CONTACT_CONFIG || {
+      provider: 'formspree',
+      formspreeEndpoint: '' // <-- paste your Formspree endpoint here to enable automatic email delivery
+    };
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
