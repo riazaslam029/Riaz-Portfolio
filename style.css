@@ -86,11 +86,13 @@ body {
    HEADER
 ==========================================================*/
 .site-header {
-  background: linear-gradient(180deg, rgba(8,10,14,0.8), rgba(8,10,14,0.6));
+  background: rgba(255,255,255,0.9);
   position: sticky;
   top: 0;
-  z-index: 20;
-  border-bottom: 1px solid rgba(255,255,255,0.03);
+  z-index: 40;
+  border-bottom: 1px solid rgba(226,232,240,0.7);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 18px rgba(35,41,70,0.04);
 }
 
 .header-row {
@@ -98,6 +100,8 @@ body {
   justify-content: space-between;
   padding: 14px 0;
 }
+
+.main-nav a { color: var(--text); }
 
 /* LOGO AREA */
 .brand {
@@ -147,6 +151,22 @@ body {
   min-height: 60vh;
 }
 
+/* Hero layout */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 28px;
+  align-items: start;
+}
+.hero-left { max-width: 720px; }
+.hero-right { display:flex; flex-direction:column; gap:14px; }
+.cta-row { display:flex; gap:12px; align-items:center; margin-top:18px; }
+.quick-links { display:flex; gap:12px; margin-top:14px; flex-wrap:wrap; }
+
+/* make header nav clearer on light background */
+.main-nav a { color: var(--text-muted); }
+.main-nav a:hover { color: var(--accent); }
+
 .hero-title {
   font-size: 2.6rem;
   color: var(--accent);
@@ -194,47 +214,45 @@ body {
   background: transparent;
 }
 
-.btn.ghost:hover {
-  background: rgba(79,140,255,0.06);
-  color: var(--accent);
-}
 
-/* Decorative accent bar on the left of sections */
-.section {
-  position: relative;
-}
-.section::before {
-  content: '';
-  position: absolute;
-  left: -8px;
-  top: 20px;
-  width: 6px;
-  height: calc(100% - 40px);
-  background: linear-gradient(180deg, var(--accent), var(--accent3));
-  border-radius: 8px;
-  opacity: 0.9;
-}
-
-/* SOCIAL LINKS */
-.quick-links a {
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: color 0.16s ease, transform 0.16s ease;
-}
-
-.quick-links a:hover {
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* Right Cards (skills, certs) */
-.profile-card,
-  .creds {
+.contact-form {
   background: linear-gradient(120deg, #f1f5fb 80%, #e3f0ff 100%);
-  padding: 18px;
   border-radius: var(--radius);
-  box-shadow: 0 10px 40px rgba(180,200,255,0.13);
+  padding: 16px;
+  border: 1px solid #e3e8f0;
 }
+
+/* Contact grid layout (align contact info + form) */
+.contact-grid { display: grid; grid-template-columns: 1fr 480px; gap: 28px; align-items: start; }
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+
+.contact-form input,
+.contact-form textarea {
+  background: #fff;
+  color: var(--text);
+  border: 1px solid #dfe7f4;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 0.97rem;
+  transition: box-shadow 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
+}
+.contact-form label { display:block; margin-bottom:6px; color:var(--text); font-weight:600; }
+.contact-form textarea { min-height:120px; resize:vertical; }
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 8px 28px rgba(79,140,255,0.12);
+  transform: translateY(-1px);
+}
+
+.form-actions { display:flex; gap:10px; margin-top:10px; }
+.form-actions .btn { padding:10px 14px; }
+
+/* Contact card (left column) */
+.contact-card { background: transparent; padding: 6px 0; display:flex; flex-direction:column; gap:10px; }
+.contact-card a { color:var(--accent); text-decoration: none; }
+.contact-card div { display:flex; gap:8px; align-items:center; }
+
 
 /* =======================================================
    ABOUT SECTION
