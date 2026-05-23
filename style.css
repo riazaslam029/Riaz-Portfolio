@@ -61,6 +61,38 @@ body {
   animation: fadeUp 0.7s cubic-bezier(.2,.9,.3,1) forwards;
 }
 
+/* stronger section entrance transitions */
+.section.reveal,
+.hero.reveal,
+.project-card.reveal,
+.skill.reveal,
+.repo-card.reveal,
+.timeline-item.reveal,
+.contact-form.reveal,
+.profile-card.reveal,
+.creds.reveal {
+  transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
+  transform: translateY(28px);
+  filter: blur(6px);
+}
+
+.section.reveal.is-visible,
+.hero.reveal.is-visible,
+.project-card.reveal.is-visible,
+.skill.reveal.is-visible,
+.repo-card.reveal.is-visible,
+.timeline-item.reveal.is-visible,
+.contact-form.reveal.is-visible,
+.profile-card.reveal.is-visible,
+.creds.reveal.is-visible {
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* slight stagger for sections and cards */
+.reveal:nth-of-type(2n).is-visible { transition-delay: 90ms; }
+.reveal:nth-of-type(3n).is-visible { transition-delay: 150ms; }
+
 /* subtle floating accent for hero */
 .accent-bubble {
   position: absolute;
