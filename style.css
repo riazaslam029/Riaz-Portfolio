@@ -414,7 +414,7 @@ body {
 
 /* Alternate section with color */
 .section.alt {
-  background: linear-gradient(120deg, #fffbe6 60%, #ffe6fa 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #334155 100%);
   border-radius: 40px 40px 0 0;
 }
 
