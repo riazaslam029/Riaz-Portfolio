@@ -51,6 +51,11 @@ body {
   100% { box-shadow: 0 0 6px rgba(96,240,215,0.10); }
 }
 
+@keyframes floatSlow {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -18px, 0) scale(1.05); }
+}
+
 /* Fade elements on scroll */
 .section, .hero, .project-card, .skill, .reveal {
   opacity: 0;
@@ -93,6 +98,12 @@ body {
 .reveal:nth-of-type(2n).is-visible { transition-delay: 90ms; }
 .reveal:nth-of-type(3n).is-visible { transition-delay: 150ms; }
 
+@media (max-width: 768px) {
+  .hero { padding: 72px 0 64px; }
+  .hero-title { font-size: 2.8rem; }
+  .hero-grid { grid-template-columns: 1fr; }
+}
+
 /* subtle floating accent for hero */
 .accent-bubble {
   position: absolute;
@@ -105,6 +116,47 @@ body {
   pointer-events: none;
   filter: blur(8px);
   transform: translateZ(0);
+}
+
+.hero-mesh {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.75;
+  animation: floatSlow 14s ease-in-out infinite;
+}
+
+.hero-orb-one {
+  width: 18rem;
+  height: 18rem;
+  left: -4rem;
+  top: 2rem;
+  background: rgba(34, 211, 238, 0.20);
+}
+
+.hero-orb-two {
+  width: 20rem;
+  height: 20rem;
+  right: -5rem;
+  top: 5rem;
+  background: rgba(168, 85, 247, 0.16);
+  animation-delay: 2s;
+}
+
+.hero-orb-three {
+  width: 16rem;
+  height: 16rem;
+  left: 40%;
+  bottom: -4rem;
+  background: rgba(16, 185, 129, 0.13);
+  animation-delay: 4s;
 }
 
 /* ---------- WRAPPER ---------- */
@@ -173,6 +225,10 @@ body {
   transform: translateY(-2px);
 }
 
+.mobile-nav-panel.hidden {
+  display: none;
+}
+
 /* =======================================================
    HERO SECTION
 ==========================================================*/
@@ -181,6 +237,13 @@ body {
   padding: 90px 0 80px 0;
   background: linear-gradient(120deg, #e3f0ff 0%, #f7fafd 60%, #fffbe6 100%);
   min-height: 60vh;
+  position: relative;
+  isolation: isolate;
+}
+
+.hero > .wrap {
+  position: relative;
+  z-index: 1;
 }
 
 /* Hero layout */

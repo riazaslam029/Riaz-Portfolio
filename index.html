@@ -59,18 +59,37 @@
         </div>
       </div>
 
-      <nav class="main-nav hidden gap-6 text-sm font-medium text-slate-300 md:flex" aria-label="Main Navigation">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+      <div class="flex items-center gap-3">
+        <nav class="main-nav hidden gap-6 text-sm font-medium text-slate-300 md:flex" aria-label="Main Navigation">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button id="mobileMenuToggle" class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-3 text-white transition hover:bg-white/10 md:hidden" aria-controls="mobileNavPanel" aria-expanded="false" aria-label="Open navigation menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileNavPanel" class="mobile-nav-panel hidden border-t border-white/10 bg-slate-950/95 px-4 pb-4 pt-2 md:hidden">
+      <nav class="flex flex-col gap-2 text-sm font-medium text-slate-300" aria-label="Mobile Navigation">
+        <a class="rounded-xl px-4 py-3 transition hover:bg-white/5 hover:text-white" href="#about">About</a>
+        <a class="rounded-xl px-4 py-3 transition hover:bg-white/5 hover:text-white" href="#skills">Skills</a>
+        <a class="rounded-xl px-4 py-3 transition hover:bg-white/5 hover:text-white" href="#projects">Projects</a>
+        <a class="rounded-xl px-4 py-3 transition hover:bg-white/5 hover:text-white" href="#experience">Experience</a>
+        <a class="rounded-xl px-4 py-3 transition hover:bg-white/5 hover:text-white" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- ====== HERO ====== -->
   <section id="hero" class="hero reveal relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-slate-100">
+    <div class="hero-mesh" aria-hidden="true">
+      <span class="hero-orb hero-orb-one"></span>
+      <span class="hero-orb hero-orb-two"></span>
+      <span class="hero-orb hero-orb-three"></span>
+    </div>
     <div class="wrap hero-grid grid gap-10 py-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(340px,0.85fr)] lg:items-start">
       <div class="hero-left max-w-3xl">
         <div class="accent-bubble" aria-hidden="true"></div>

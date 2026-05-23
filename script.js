@@ -8,6 +8,10 @@ function $qs(sel){ return document.querySelector(sel) }
 function $qa(sel){ return Array.from(document.querySelectorAll(sel)) }
 function currency(num){ return Number(num).toLocaleString('en-PK'); }
 
+const FEATURED_REPOS = Array.isArray(window.PORTFOLIO_CONFIG?.featuredRepos)
+  ? window.PORTFOLIO_CONFIG.featuredRepos.map(name => String(name).toLowerCase())
+  : [];
+
 /* Set current year */
 (function(){
   const y = new Date().getFullYear();
@@ -327,16 +331,27 @@ async function loadGitHubProjects(username = 'riazaslam029', limit = 8){
     const repos = (await res.json())
       .filter(r => !r.fork && !r.archived)
       .sort((a, b) => {
+        const aFeatured = FEATURED_REPOS.indexOf(String(a.name).toLowerCase());
+        const bFeatured = FEATURED_REPOS.indexOf(String(b.name).toLowerCase());
+        if(aFeatured !== -1 || bFeatured !== -1){
+          if(aFeatured === -1) return 1;
+          if(bFeatured === -1) return -1;
+          if(aFeatured !== bFeatured) return aFeatured - bFeatured;
+        }
         const starDelta = (b.stargazers_count || 0) - (a.stargazers_count || 0);
         return starDelta !== 0 ? starDelta : new Date(b.updated_at) - new Date(a.updated_at);
       })
       .slice(0, limit);
     container.innerHTML = '';
-    repos.forEach(r => {
+    repos.forEach((r, index) => {
       const card = document.createElement('article');
       card.className = 'repo-card reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl';
+      const featured = FEATURED_REPOS.indexOf(String(r.name).toLowerCase()) !== -1 || index < 3;
       card.innerHTML = `
-        <h4 class="mb-2 text-lg font-semibold text-white"><a href="${r.html_url}" target="_blank" rel="noopener">${r.name}</a></h4>
+        <div class="mb-3 flex items-start justify-between gap-3">
+          <h4 class="text-lg font-semibold text-white"><a href="${r.html_url}" target="_blank" rel="noopener">${r.name}</a></h4>
+          ${featured ? '<span class="rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1 text-xs font-semibold text-brand-200">Featured</span>' : ''}
+        </div>
         <p class="mb-4 min-h-[4.5rem] text-sm leading-6 text-slate-300">${r.description || 'No description provided yet.'}</p>
         <div class="repo-meta flex flex-wrap items-center gap-2 text-sm text-slate-400">
           <div class="lang rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1 font-semibold text-brand-200">${r.language || 'N/A'}</div>
@@ -355,6 +370,32 @@ async function loadGitHubProjects(username = 'riazaslam029', limit = 8){
     container.innerHTML = `<div class="col-span-full rounded-2xl border border-white/10 bg-white/5 p-6 text-slate-300">Could not load GitHub projects (${err.message}). Try again later.</div>`;
     console.warn(err);
   }
+}
+
+/* ----------- Mobile navigation ----------- */
+function wireMobileMenu(){
+  const button = document.getElementById('mobileMenuToggle');
+  const panel = document.getElementById('mobileNavPanel');
+  if(!button || !panel) return;
+
+  const closePanel = () => {
+    panel.classList.add('hidden');
+    button.setAttribute('aria-expanded', 'false');
+  };
+
+  button.addEventListener('click', () => {
+    const willOpen = panel.classList.contains('hidden');
+    panel.classList.toggle('hidden');
+    button.setAttribute('aria-expanded', String(willOpen));
+  });
+
+  panel.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closePanel);
+  });
+
+  window.addEventListener('resize', () => {
+    if(window.innerWidth >= 768) closePanel();
+  });
 }
 
 /* ----------- Reveal observer for scroll animations ----------- */
@@ -379,6 +420,8 @@ function scrollToDemo(){
 
 /* ----------- Init on DOM ready ----------- */
 document.addEventListener('DOMContentLoaded', function(){
+  wireMobileMenu();
+
   // Only initialize the e-commerce demo if the demo DOM exists.
   if(document.getElementById('productsGrid') && document.getElementById('cartList')){
     wireDemo();
