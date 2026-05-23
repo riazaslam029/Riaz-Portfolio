@@ -22,20 +22,20 @@
           fontFamily: { sans: ['Inter', 'sans-serif'] },
           colors: {
             brand: {
-              50: '#ecfeff',
-              100: '#cffafe',
-              200: '#a5f3fc',
-              300: '#67e8f9',
-              400: '#22d3ee',
-              500: '#06b6d4',
-              600: '#0891b2',
-              700: '#0e7490',
-              800: '#155e75',
-              900: '#164e63'
+              50: '#fef2f2',
+              100: '#fee2e2',
+              200: '#fecaca',
+              300: '#fca5a5',
+              400: '#f87171',
+              500: '#ef4444',
+              600: '#dc2626',
+              700: '#b91c1c',
+              800: '#991b1b',
+              900: '#7f1d1d'
             }
           },
           boxShadow: {
-            glow: '0 0 0 1px rgba(34,211,238,.12), 0 20px 60px rgba(2,132,199,.18)'
+            glow: '0 0 0 1px rgba(239,68,68,.12), 0 20px 60px rgba(220,38,38,.18)'
           }
         }
       }
@@ -43,10 +43,10 @@
   </script>
   <meta name="description" content="Portfolio of Riaz Aslam — Software Engineering student, web developer, AI enthusiast.">
 </head>
-<body class="bg-slate-950 font-sans text-slate-100 antialiased selection:bg-brand-400/30 selection:text-white">
+<body class="bg-slate-700 font-sans text-slate-100 antialiased selection:bg-brand-400/30 selection:text-white">
 
   <!-- ====== NAV / HEADER ====== -->
-  <header class="site-header sticky top-0 z-40 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+  <header class="site-header sticky top-0 z-40 border-b border-white/10 bg-slate-700/80 backdrop-blur-xl">
     <div class="wrap header-row flex items-center justify-between py-4">
       <div class="brand flex items-center gap-4">
         <div class="brand-photo" id="brand-photo">
@@ -72,7 +72,7 @@
         </button>
       </div>
     </div>
-    <div id="mobileNavPanel" class="mobile-nav-panel hidden border-t border-white/10 bg-slate-950/95 px-4 pb-4 pt-2 md:hidden">
+    <div id="mobileNavPanel" class="mobile-nav-panel hidden border-t border-white/10 bg-slate-700/95 px-4 pb-4 pt-2 md:hidden">
       <nav class="flex flex-col gap-2 text-sm font-medium text-slate-300" aria-label="Mobile Navigation">
         <a class="rounded-xl px-4 py-3 transition hover:bg-white/5 hover:text-white" href="#about">About</a>
         <a class="rounded-xl px-4 py-3 transition hover:bg-white/5 hover:text-white" href="#skills">Skills</a>
@@ -84,7 +84,7 @@
   </header>
 
   <!-- ====== HERO ====== -->
-  <section id="hero" class="hero reveal relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-slate-100">
+  <section id="hero" class="hero reveal relative overflow-hidden bg-gradient-to-br from-slate-700 via-slate-600 to-slate-500 text-slate-100">
     <div class="hero-mesh" aria-hidden="true">
       <span class="hero-orb hero-orb-one"></span>
       <span class="hero-orb hero-orb-two"></span>
@@ -140,15 +140,15 @@
 
       <div class="hero-right flex flex-col gap-4">
         <div class="portrait-cloud rounded-[2rem] border border-white/10 bg-white/5 p-4 shadow-glow backdrop-blur-xl">
-          <div class="portrait-shell overflow-hidden rounded-[1.75rem] border border-white/20 bg-gradient-to-b from-white to-slate-100 p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
-            <div class="overflow-hidden rounded-[1.5rem] bg-slate-900">
+          <div class="portrait-shell overflow-hidden rounded-[1.75rem] border border-white/20 bg-gradient-to-b from-slate-100 to-slate-200 p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
+            <div class="overflow-hidden rounded-[1.5rem] bg-slate-700">
               <img src="profile photo.jpg" alt="Riaz Aslam portrait" class="hero-portrait-img h-[340px] w-full object-cover object-top" onerror="this.style.opacity='.08'">
             </div>
           </div>
           <div class="mt-4 flex items-center justify-between gap-3">
             <div>
-              <p class="text-sm font-semibold text-white">Riaz Aslam</p>
-              <p class="text-xs text-slate-400">Software Engineering Student · Web Developer</p>
+              <p class="text-sm font-semibold text-slate-900">Riaz Aslam</p>
+              <p class="text-xs text-slate-700">Software Engineering Student · Web Developer</p>
             </div>
             <span class="rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1 text-xs font-semibold text-brand-200">Portfolio</span>
           </div>
@@ -180,7 +180,7 @@
         </div>
 
         <!-- color strip showing certifications -->
-        <div class="card creds reveal rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-glow backdrop-blur-xl">
+        <div class="card creds reveal rounded-3xl border border-white/10 bg-slate-600/70 p-6 shadow-glow backdrop-blur-xl">
           <h4 class="text-base font-semibold text-white">Certifications & Awards</h4>
           <div id="cert-list" class="mt-4">
             <ul class="space-y-2 text-sm text-slate-300">
@@ -197,7 +197,7 @@
   </section>
 
   <!-- ====== ABOUT ====== -->
-  <section id="about" class="section reveal bg-slate-950 py-20 text-slate-100">
+  <section id="about" class="section reveal bg-slate-700 py-20 text-slate-100">
     <div class="wrap section-grid grid gap-10 lg:grid-cols-2 lg:items-start">
       <div class="col rounded-3xl border border-white/10 bg-white/5 p-8 shadow-glow backdrop-blur-xl">
         <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-brand-400/20 bg-brand-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-brand-200">About Me</p>
@@ -216,7 +216,7 @@
         <a class="btn outline mt-6 inline-flex rounded-full border border-brand-300/30 px-5 py-3 font-semibold text-white transition hover:bg-white/5" href="#contact">Hire / Contact</a>
       </div>
 
-      <div class="col rounded-3xl border border-white/10 bg-slate-900/70 p-8 shadow-glow backdrop-blur-xl">
+      <div class="col rounded-3xl border border-white/10 bg-slate-600/70 p-8 shadow-glow backdrop-blur-xl">
         <h3 class="text-xl font-semibold text-white">Contact</h3>
         <div class="contact-cards mt-5 space-y-4 text-sm text-slate-300">
           <div class="flex items-center gap-3"><i class="far fa-envelope text-brand-300"></i><a class="hover:text-brand-200" href="mailto:riazaslam029@gmail.com">riazaslam029@gmail.com</a></div>
@@ -232,7 +232,7 @@
   </section>
 
   <!-- ====== SKILLS ====== -->
-  <section id="skills" class="section alt reveal bg-slate-900 py-20 text-slate-100">
+  <section id="skills" class="section alt reveal bg-slate-600 py-20 text-slate-100">
     <div class="wrap">
       <h2 class="section-heading text-3xl font-bold tracking-tight text-white">Skills & Tools</h2>
 
@@ -278,7 +278,7 @@
   </section>
 
   <!-- ====== PROJECTS (includes e-commerce) ====== -->
-  <section id="projects" class="section reveal bg-slate-950 py-20 text-slate-100">
+  <section id="projects" class="section reveal bg-slate-700 py-20 text-slate-100">
     <div class="wrap">
       <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
@@ -343,7 +343,7 @@
       </div> <!-- /projects-grid -->
 
       <!-- GitHub Projects (populated by script.js) -->
-      <div style="margin-top:28px" class="reveal rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-glow backdrop-blur-xl">
+      <div style="margin-top:28px" class="reveal rounded-3xl border border-white/10 bg-slate-600/70 p-6 shadow-glow backdrop-blur-xl">
         <h3 class="text-xl font-semibold text-white">Live GitHub Projects</h3>
         <p class="mt-2 text-sm text-slate-400">Pulled directly from your public GitHub repositories.</p>
         <div id="github-projects" class="projects-grid mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -354,7 +354,7 @@
   </section>
 
   <!-- ====== EXPERIENCE ====== -->
-  <section id="experience" class="section reveal bg-slate-900 py-20 text-slate-100">
+  <section id="experience" class="section reveal bg-slate-600 py-20 text-slate-100">
     <div class="wrap">
       <h2 class="section-heading text-3xl font-bold tracking-tight text-white">Experience & Education</h2>
 
@@ -399,7 +399,7 @@
   </section>
 
   <!-- ====== CONTACT ====== -->
-  <section id="contact" class="section alt reveal bg-slate-950 py-20 text-slate-100">
+  <section id="contact" class="section alt reveal bg-slate-700 py-20 text-slate-100">
     <div class="wrap contact-grid grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
       <div class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-glow backdrop-blur-xl">
         <h2 class="section-heading text-3xl font-bold tracking-tight text-white">Get in Touch</h2>
@@ -412,7 +412,7 @@
         </div>
       </div>
 
-      <form id="contactForm" class="contact-form rounded-3xl border border-white/10 bg-slate-900/70 p-8 shadow-glow backdrop-blur-xl" aria-label="Contact form">
+      <form id="contactForm" class="contact-form rounded-3xl border border-white/10 bg-slate-600 p-8 shadow-glow backdrop-blur-xl" aria-label="Contact form">
         <label for="cname">Name</label>
         <input id="cname" name="name" type="text" placeholder="Your name" required>
 
@@ -433,7 +433,7 @@
   </section>
 
   <!-- ====== FOOTER ====== -->
-  <footer class="site-footer border-t border-white/10 bg-slate-950 py-8 text-sm text-slate-400">
+  <footer class="site-footer border-t border-white/10 bg-slate-700 py-8 text-sm text-slate-400">
     <div class="wrap footer-row flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
       <div>&copy; <span id="year"></span> Riaz Aslam</div>
       <div class="footer-links flex flex-wrap gap-4">
