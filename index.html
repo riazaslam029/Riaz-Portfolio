@@ -13,25 +13,53 @@
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63'
+            }
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(34,211,238,.12), 0 20px 60px rgba(2,132,199,.18)'
+          }
+        }
+      }
+    }
+  </script>
   <meta name="description" content="Portfolio of Riaz Aslam — Software Engineering student, web developer, AI enthusiast.">
 </head>
-<body>
+<body class="bg-slate-950 font-sans text-slate-100 antialiased selection:bg-brand-400/30 selection:text-white">
 
   <!-- ====== NAV / HEADER ====== -->
-  <header class="site-header">
-    <div class="wrap header-row">
-      <div class="brand">
+  <header class="site-header sticky top-0 z-40 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+    <div class="wrap header-row flex items-center justify-between py-4">
+      <div class="brand flex items-center gap-4">
         <div class="brand-photo" id="brand-photo">
           <!-- Replace profile-photo.jpg with your own image file -->
           <img src="profile photo.jpg" alt="Riaz Aslam" onerror="this.style.opacity='.08'">
         </div>
         <div>
-          <h1 class="brand-name">Riaz Aslam</h1>
-          <p class="brand-sub">Software Engineering Student · Web Developer · AI Enthusiast</p>
+          <h1 class="brand-name text-lg font-bold tracking-tight text-white">Riaz Aslam</h1>
+          <p class="brand-sub text-sm text-slate-400">Software Engineering Student · Web Developer · AI Enthusiast</p>
         </div>
       </div>
 
-      <nav class="main-nav" aria-label="Main Navigation">
+      <nav class="main-nav hidden gap-6 text-sm font-medium text-slate-300 md:flex" aria-label="Main Navigation">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -42,40 +70,41 @@
   </header>
 
   <!-- ====== HERO ====== -->
-  <section id="hero" class="hero reveal">
-    <div class="wrap hero-grid">
-      <div class="hero-left">
+  <section id="hero" class="hero reveal relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-slate-100">
+    <div class="wrap hero-grid grid gap-10 py-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(340px,0.85fr)] lg:items-start">
+      <div class="hero-left max-w-3xl">
         <div class="accent-bubble" aria-hidden="true"></div>
-        <h2 class="eyebrow">Hello — I'm</h2>
-        <h1 class="hero-title">Riaz <span class="accent">Aslam</span></h1>
-        <p class="hero-lead">
+        <p class="eyebrow mb-3 inline-flex items-center gap-2 rounded-full border border-brand-400/20 bg-brand-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-brand-200">Hello — I'm</p>
+        <h1 class="hero-title max-w-2xl text-5xl font-extrabold tracking-tight text-white sm:text-6xl">Riaz <span class="accent text-brand-300">Aslam</span></h1>
+        <p class="hero-lead mt-6 max-w-2xl text-lg leading-8 text-slate-300">
           Software Engineering student at COMSATS (CUI’28). I build clean, accessible and responsive web interfaces,
           blend creative content with code, and explore AI & advanced Python.
         </p>
 
-        <div class="cta-row">
-          <a class="btn primary" href="#projects">View Projects</a>
+        <div class="cta-row mt-8 flex flex-wrap items-center gap-3">
+          <a class="btn primary inline-flex items-center gap-2 rounded-full bg-brand-400 px-6 py-3 font-semibold text-slate-950 shadow-glow transition hover:-translate-y-0.5 hover:bg-brand-300" href="#projects">View Projects</a>
+          <a class="btn ghost inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 font-semibold text-white transition hover:border-brand-300/30 hover:bg-white/5" href="#contact">Contact Me</a>
         </div>
 
-        <div class="quick-links">
-          <a href="https://github.com/riazaslam029" target="_blank" rel="noopener">
+        <div class="quick-links mt-8 flex flex-wrap gap-4 text-sm text-slate-300">
+          <a class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:border-brand-300/30 hover:bg-white/10" href="https://github.com/riazaslam029" target="_blank" rel="noopener">
             <i class="fab fa-github"></i> GitHub
           </a>
-          <a href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank" rel="noopener">
+          <a class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:border-brand-300/30 hover:bg-white/10" href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank" rel="noopener">
             <i class="fab fa-linkedin"></i> LinkedIn
           </a>
-          <a href="mailto:riazaslam029@gmail.com">
+          <a class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:border-brand-300/30 hover:bg-white/10" href="mailto:riazaslam029@gmail.com">
             <i class="far fa-envelope"></i> riazaslam029@gmail.com
           </a>
         </div>
       </div>
 
-      <div class="hero-right">
+      <div class="hero-right flex flex-col gap-4">
         <!-- stylized card with highlights -->
-        <div class="card profile-card reveal">
+        <div class="card profile-card reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
           <div class="card-top">
-            <h3>Top Skills</h3>
-            <div class="skill-tags">
+            <h3 class="text-base font-semibold text-white">Top Skills</h3>
+            <div class="skill-tags mt-4 flex flex-wrap gap-2">
               <span>HTML</span>
               <span>CSS</span>
               <span>JavaScript</span>
@@ -86,9 +115,9 @@
             </div>
           </div>
 
-          <div class="card-body">
-            <h4>Quick facts</h4>
-            <ul class="facts">
+          <div class="card-body mt-6">
+            <h4 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Quick facts</h4>
+            <ul class="facts mt-4 space-y-3 text-sm leading-6 text-slate-300">
               <li><strong>University:</strong> COMSATS University, Lahore (Software Engineering)</li>
               <li><strong>Role:</strong> Social Co-Lead @ GDGoC (Google Developer Group on Campus)</li>
               <li><strong>Interests:</strong> AI, full-stack concepts, creative tech & video production</li>
@@ -97,16 +126,16 @@
         </div>
 
         <!-- color strip showing certifications -->
-        <div class="card creds reveal">
-          <h4>Certifications & Awards</h4>
-          <div id="cert-list">
-            <ul>
+        <div class="card creds reveal rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-glow backdrop-blur-xl">
+          <h4 class="text-base font-semibold text-white">Certifications & Awards</h4>
+          <div id="cert-list" class="mt-4">
+            <ul class="space-y-2 text-sm text-slate-300">
               <li>Introduction to Git & GitHub</li>
               <li>Google AI Essentials</li>
               <li>Certificate of Appreciation — Hashtag Heros</li>
               <li>Certificate of Appreciation in 404 Squad</li>
             </ul>
-            <p style="margin-top:8px;font-size:0.9rem">More on <a href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank" rel="noopener">LinkedIn</a></p>
+            <p class="mt-4 text-sm text-slate-400">More on <a class="text-brand-300 hover:text-brand-200" href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank" rel="noopener">LinkedIn</a></p>
           </div>
         </div>
       </div>
@@ -114,77 +143,78 @@
   </section>
 
   <!-- ====== ABOUT ====== -->
-  <section id="about" class="section reveal">
-    <div class="wrap section-grid">
-      <div class="col">
-        <h2>About Me</h2>
-        <p>
+  <section id="about" class="section reveal bg-slate-950 py-20 text-slate-100">
+    <div class="wrap section-grid grid gap-10 lg:grid-cols-2 lg:items-start">
+      <div class="col rounded-3xl border border-white/10 bg-white/5 p-8 shadow-glow backdrop-blur-xl">
+        <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-brand-400/20 bg-brand-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-brand-200">About Me</p>
+        <h2 class="text-3xl font-bold tracking-tight text-white">Building thoughtful digital experiences</h2>
+        <p class="mt-5 text-slate-300">
           I am a Software Engineering student at COMSATS University (CUI’28) with a strong interest in software development,
           problem-solving and creative technologies. I focus on building efficient, accessible user interfaces and exploring AI
           and Python to add smarter features.
         </p>
 
-        <p>
+        <p class="mt-4 text-slate-300">
           I combine technical skills (C++, Python, HTML/CSS/JS) with content creation and team leadership — previously contributing
           as Social Co-Lead at GDGoC and volunteering at TechnoVerse CUI.
         </p>
 
-        <a class="btn outline" href="#contact">Hire / Contact</a>
+        <a class="btn outline mt-6 inline-flex rounded-full border border-brand-300/30 px-5 py-3 font-semibold text-white transition hover:bg-white/5" href="#contact">Hire / Contact</a>
       </div>
 
-      <div class="col">
-        <h3>Contact</h3>
-        <div class="contact-cards">
-          <div><i class="far fa-envelope"></i><a href="mailto:riazaslam029@gmail.com">riazaslam029@gmail.com</a></div>
-          <div><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank">LinkedIn</a></div>
-          <div><i class="fab fa-github"></i><a href="https://github.com/riazaslam029" target="_blank">GitHub</a></div>
-          <div><i class="fas fa-map-marker-alt"></i>Lahore, Punjab, Pakistan</div>
+      <div class="col rounded-3xl border border-white/10 bg-slate-900/70 p-8 shadow-glow backdrop-blur-xl">
+        <h3 class="text-xl font-semibold text-white">Contact</h3>
+        <div class="contact-cards mt-5 space-y-4 text-sm text-slate-300">
+          <div class="flex items-center gap-3"><i class="far fa-envelope text-brand-300"></i><a class="hover:text-brand-200" href="mailto:riazaslam029@gmail.com">riazaslam029@gmail.com</a></div>
+          <div class="flex items-center gap-3"><i class="fab fa-linkedin text-brand-300"></i><a class="hover:text-brand-200" href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank">LinkedIn</a></div>
+          <div class="flex items-center gap-3"><i class="fab fa-github text-brand-300"></i><a class="hover:text-brand-200" href="https://github.com/riazaslam029" target="_blank">GitHub</a></div>
+          <div class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-brand-300"></i><span>Lahore, Punjab, Pakistan</span></div>
         </div>
 
-        <h3>Creative</h3>
-        <p>Video editing, social content creation and visual storytelling — I use these skills to present technical work clearly.</p>
+        <h3 class="mt-8 text-xl font-semibold text-white">Creative</h3>
+        <p class="mt-4 text-slate-300">Video editing, social content creation and visual storytelling — I use these skills to present technical work clearly.</p>
       </div>
     </div>
   </section>
 
   <!-- ====== SKILLS ====== -->
-  <section id="skills" class="section alt reveal">
+  <section id="skills" class="section alt reveal bg-slate-900 py-20 text-slate-100">
     <div class="wrap">
-      <h2 class="section-heading">Skills & Tools</h2>
+      <h2 class="section-heading text-3xl font-bold tracking-tight text-white">Skills & Tools</h2>
 
-      <div class="skills-grid">
+      <div class="skills-grid mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         <!-- skill card -->
-        <div class="skill reveal">
+        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
           <div class="skill-head"><i class="fab fa-html5"></i><strong>HTML5</strong></div>
           <div class="skill-bar"><span style="width:92%"></span></div>
           <p class="skill-meta">Semantic markup, accessibility, forms</p>
         </div>
 
-        <div class="skill reveal">
+        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
           <div class="skill-head"><i class="fab fa-css3-alt"></i><strong>CSS3</strong></div>
           <div class="skill-bar"><span style="width:90%"></span></div>
           <p class="skill-meta">Responsive layouts, Flexbox, Grid, animations</p>
         </div>
 
-        <div class="skill reveal">
+        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
           <div class="skill-head"><i class="fab fa-js-square"></i><strong>JavaScript (Vanilla)</strong></div>
           <div class="skill-bar"><span style="width:85%"></span></div>
           <p class="skill-meta">DOM, ES6, localStorage, modular code</p>
         </div>
 
-        <div class="skill reveal">
+        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
           <div class="skill-head"><i class="fas fa-code"></i><strong>C++ & C</strong></div>
           <div class="skill-bar"><span style="width:80%"></span></div>
           <p class="skill-meta">OOP, algorithms, data structures</p>
         </div>
 
-        <div class="skill reveal">
+        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
           <div class="skill-head"><i class="fab fa-python"></i><strong>Python</strong></div>
           <div class="skill-bar"><span style="width:75%"></span></div>
           <p class="skill-meta">Scripting, basic AI & ML experiments</p>
         </div>
 
-        <div class="skill reveal">
+        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
           <div class="skill-head"><i class="fab fa-git-alt"></i><strong>Git & GitHub</strong></div>
           <div class="skill-bar"><span style="width:88%"></span></div>
           <p class="skill-meta">Version control, collaborative workflows</p>
@@ -194,130 +224,117 @@
   </section>
 
   <!-- ====== PROJECTS (includes e-commerce) ====== -->
-  <section id="projects" class="section reveal">
+  <section id="projects" class="section reveal bg-slate-950 py-20 text-slate-100">
     <div class="wrap">
-      <h2 class="section-heading">Selected Projects</h2>
+      <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-brand-400/20 bg-brand-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-brand-200">Selected Projects</p>
+          <h2 class="section-heading text-3xl font-bold tracking-tight text-white">Highlighted work and live GitHub repositories</h2>
+        </div>
+        <p class="max-w-2xl text-sm leading-6 text-slate-400">A curated mix of featured projects plus your public GitHub repositories, presented in a polished, recruiter-friendly layout.</p>
+      </div>
 
       <!-- project grid -->
-      <div class="projects-grid">
+      <div class="projects-grid mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 
         <!-- Project: E-commerce (simplified showcase) -->
-        <article class="project-card project-ecom reveal" data-tech="HTML,CSS,JS">
-          <div class="project-header">
-            <h3>E-Commerce Demo (Front-end Shopping App)</h3>
-            <div class="label">Featured</div>
+        <article class="project-card project-ecom reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl" data-tech="HTML,CSS,JS">
+          <div class="project-header flex items-start justify-between gap-4">
+            <h3 class="text-xl font-semibold text-white">E-Commerce Demo (Front-end Shopping App)</h3>
+            <div class="label rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1 text-xs font-semibold text-brand-200">Featured</div>
           </div>
-          <p class="project-desc">
+          <p class="project-desc mt-4 text-sm leading-7 text-slate-300">
             Front-end e-commerce demo showcasing product listing, filters and cart interactions. Interactive demo removed
             from the public site — source and screenshots are available on GitHub.
           </p>
 
-          <ul class="project-details">
+          <ul class="project-details mt-4 space-y-2 text-sm text-slate-400">
             <li><strong>Role:</strong> Lead developer (frontend, Backend)</li>
             <li><strong>Stack:</strong> Java, JavaFX (no frameworks)</li>
           </ul>
 
-          
-
-          <div class="project-actions">
-            <a class="btn ghost small" href="https://github.com/riazaslam029" target="_blank">View Source</a>
+          <div class="project-actions mt-6">
+            <a class="btn ghost small inline-flex rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/5" href="https://github.com/riazaslam029" target="_blank">View Source</a>
           </div>
         </article>
 
         <!-- Project: Portfolio repo (this site) -->
-        <article class="project-card reveal" data-tech="HTML,CSS,JS">
-          <div class="project-header">
-            <h3>Personal Portfolio (This Site)</h3>
-            <div class="label">Web</div>
+        <article class="project-card reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl" data-tech="HTML,CSS,JS">
+          <div class="project-header flex items-start justify-between gap-4">
+            <h3 class="text-xl font-semibold text-white">Personal Portfolio (This Site)</h3>
+            <div class="label rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1 text-xs font-semibold text-brand-200">Web</div>
           </div>
-          <p class="project-desc">This live portfolio — responsive, accessible and modern — to showcase projects, resume and contact options.</p>
-          <ul class="project-details">
+          <p class="project-desc mt-4 text-sm leading-7 text-slate-300">This live portfolio — responsive, accessible and modern — to showcase projects, resume and contact options.</p>
+          <ul class="project-details mt-4 space-y-2 text-sm text-slate-400">
             <li><strong>Stack:</strong> HTML, CSS, JavaScript</li>
             <li><strong>Link:</strong> <a href="https://github.com/riazaslam029" target="_blank">github.com/riazaslam029</a></li>
           </ul>
-          <div class="project-actions">
-            <a class="btn ghost small" href="https://github.com/riazaslam029" target="_blank">Open GitHub</a>
+          <div class="project-actions mt-6">
+            <a class="btn ghost small inline-flex rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/5" href="https://github.com/riazaslam029" target="_blank">Open GitHub</a>
           </div>
         </article>
 
         <!-- Placeholder for other projects discovered on your GitHub -->
-        <article class="project-card reveal" data-tech="C++,Python">
-          <div class="project-header">
-            <h3>Algorithms & C++ Projects</h3>
-            <div class="label">C++</div>
+        <article class="project-card reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl" data-tech="C++,Python">
+          <div class="project-header flex items-start justify-between gap-4">
+            <h3 class="text-xl font-semibold text-white">Algorithms & C++ Projects</h3>
+            <div class="label rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1 text-xs font-semibold text-brand-200">C++</div>
           </div>
-          <p class="project-desc">Collection of algorithm implementations and coursework in C++ — data structures, small utilities and problem solving examples.</p>
-          <div class="project-actions">
-            <a class="btn ghost small" href="https://github.com/riazaslam029" target="_blank">Explore Repositories</a>
+          <p class="project-desc mt-4 text-sm leading-7 text-slate-300">Collection of algorithm implementations and coursework in C++ — data structures, small utilities and problem solving examples.</p>
+          <div class="project-actions mt-6">
+            <a class="btn ghost small inline-flex rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/5" href="https://github.com/riazaslam029" target="_blank">Explore Repositories</a>
           </div>
         </article>
 
       </div> <!-- /projects-grid -->
 
       <!-- GitHub Projects (populated by script.js) -->
-      <div style="margin-top:28px" class="reveal">
-        <h3 style="margin-bottom:10px">Live GitHub Projects</h3>
-        <div id="github-projects" class="projects-grid">
+      <div style="margin-top:28px" class="reveal rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-glow backdrop-blur-xl">
+        <h3 class="text-xl font-semibold text-white">Live GitHub Projects</h3>
+        <p class="mt-2 text-sm text-slate-400">Pulled directly from your public GitHub repositories.</p>
+        <div id="github-projects" class="projects-grid mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           <!-- JS will inject repo cards here -->
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== E-COMMERCE DEMO (Simplified showcase) ====== -->
-  <!-- Interactive demo removed for a cleaner, professional presentation.
-       Show link to source instead. -->
-  <section id="ecom-demo" class="section alt demo-section reveal">
-    <div class="wrap">
-      <h2 class="section-heading">E-Commerce Demo (Link)</h2>
-      <p class="muted">Below a link to the source repository.</p>
-
-      
-      </div>
-
-      <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
-        <a class="btn primary" href="https://github.com/riazaslam029" target="_blank" rel="noopener">View Source on GitHub</a>
-        <a class="btn ghost" href="#projects">Back to Projects</a>
-      </div>
-    </div>
-  </section>
-
   <!-- ====== EXPERIENCE ====== -->
-  <section id="experience" class="section reveal">
+  <section id="experience" class="section reveal bg-slate-900 py-20 text-slate-100">
     <div class="wrap">
-      <h2 class="section-heading">Experience & Education</h2>
+      <h2 class="section-heading text-3xl font-bold tracking-tight text-white">Experience & Education</h2>
 
-      <div class="timeline">
-        <div class="timeline-item">
+      <div class="timeline mt-10 space-y-4">
+        <div class="timeline-item rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
           <div class="ti-left">
-            <h4>Social Co-Lead — GDGoC, COMSATS</h4>
-            <span class="muted">September 2025 — Present</span>
+            <h4 class="text-lg font-semibold text-white">Social Co-Lead — GDGoC, COMSATS</h4>
+            <span class="muted text-sm text-slate-400">September 2025 — Present</span>
           </div>
           <div class="ti-right">
-            <p>Co-leading community outreach and social activities for the campus Google Developer Group — content strategy, event promotion and collaboration.</p>
+            <p class="mt-3 text-slate-300">Co-leading community outreach and social activities for the campus Google Developer Group — content strategy, event promotion and collaboration.</p>
           </div>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
           <div class="ti-left">
-            <h4>Member — Tech Hierarchy</h4>
-            <span class="muted">September 2024 — October 2025</span>
+            <h4 class="text-lg font-semibold text-white">Member — Tech Hierarchy</h4>
+            <span class="muted text-sm text-slate-400">September 2024 — October 2025</span>
           </div>
-          <div class="ti-right"><p>Active member contributing to technical events and workshops.</p></div>
+          <div class="ti-right"><p class="mt-3 text-slate-300">Active member contributing to technical events and workshops.</p></div>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
           <div class="ti-left">
-            <h4>Freelance Content Creator</h4>
-            <span class="muted">Sep 2024 — July 2025</span>
+            <h4 class="text-lg font-semibold text-white">Freelance Content Creator</h4>
+            <span class="muted text-sm text-slate-400">Sep 2024 — July 2025</span>
           </div>
-          <div class="ti-right"><p>Created social content and video edits to support client/educational promotion.</p></div>
+          <div class="ti-right"><p class="mt-3 text-slate-300">Created social content and video edits to support client/educational promotion.</p></div>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
           <div class="ti-left">
-            <h4>Education</h4>
-            <span class="muted">COMSATS University Lahore — Software Engineering (2024–2028)</span>
+            <h4 class="text-lg font-semibold text-white">Education</h4>
+            <span class="muted text-sm text-slate-400">COMSATS University Lahore — Software Engineering (2024–2028)</span>
           </div>
           <div class="ti-right"></div>
         </div>
@@ -328,20 +345,20 @@
   </section>
 
   <!-- ====== CONTACT ====== -->
-  <section id="contact" class="section alt reveal">
-    <div class="wrap contact-grid">
-      <div>
-        <h2 class="section-heading">Get in Touch</h2>
-        <p>If you'd like to discuss a role, internship or project — email me or open a GitHub issue on any repo.</p>
+  <section id="contact" class="section alt reveal bg-slate-950 py-20 text-slate-100">
+    <div class="wrap contact-grid grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-glow backdrop-blur-xl">
+        <h2 class="section-heading text-3xl font-bold tracking-tight text-white">Get in Touch</h2>
+        <p class="mt-4 text-slate-300">If you'd like to discuss a role, internship or project — email me or open a GitHub issue on any repo.</p>
 
-        <div class="contact-card">
-          <div><i class="far fa-envelope"></i><a href="mailto:riazaslam029@gmail.com">riazaslam029@gmail.com</a></div>
-          <div><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank">LinkedIn</a></div>
-          <div><i class="fab fa-github"></i><a href="https://github.com/riazaslam029" target="_blank">GitHub</a></div>
+        <div class="contact-card mt-6 space-y-4 text-sm text-slate-300">
+          <div class="flex items-center gap-3"><i class="far fa-envelope text-brand-300"></i><a class="hover:text-brand-200" href="mailto:riazaslam029@gmail.com">riazaslam029@gmail.com</a></div>
+          <div class="flex items-center gap-3"><i class="fab fa-linkedin text-brand-300"></i><a class="hover:text-brand-200" href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank">LinkedIn</a></div>
+          <div class="flex items-center gap-3"><i class="fab fa-github text-brand-300"></i><a class="hover:text-brand-200" href="https://github.com/riazaslam029" target="_blank">GitHub</a></div>
         </div>
       </div>
 
-      <form id="contactForm" class="contact-form" aria-label="Contact form">
+      <form id="contactForm" class="contact-form rounded-3xl border border-white/10 bg-slate-900/70 p-8 shadow-glow backdrop-blur-xl" aria-label="Contact form">
         <label for="cname">Name</label>
         <input id="cname" name="name" type="text" placeholder="Your name" required>
 
@@ -351,24 +368,24 @@
         <label for="cmessage">Message</label>
         <textarea id="cmessage" name="message" rows="5" placeholder="How can I help?" required></textarea>
 
-        <div class="form-actions">
-          <button class="btn primary" type="submit">Send Message</button>
-          <button class="btn ghost" type="reset">Reset</button>
+        <div class="form-actions mt-5 flex flex-wrap gap-3">
+          <button class="btn primary inline-flex rounded-full bg-brand-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-brand-300" type="submit">Send Message</button>
+          <button class="btn ghost inline-flex rounded-full border border-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/5" type="reset">Reset</button>
         </div>
 
-        <div id="contactResult" class="muted tiny" aria-live="polite"></div>
+        <div id="contactResult" class="muted tiny mt-4 text-sm text-slate-400" aria-live="polite"></div>
       </form>
     </div>
   </section>
 
   <!-- ====== FOOTER ====== -->
-  <footer class="site-footer">
-    <div class="wrap footer-row">
+  <footer class="site-footer border-t border-white/10 bg-slate-950 py-8 text-sm text-slate-400">
+    <div class="wrap footer-row flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
       <div>&copy; <span id="year"></span> Riaz Aslam</div>
-      <div class="footer-links">
-        <a href="https://github.com/riazaslam029" target="_blank">GitHub</a>
-        <a href="Profile.pdf" target="_blank">Resume</a>
-        <a href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank">LinkedIn</a>
+      <div class="footer-links flex flex-wrap gap-4">
+        <a class="hover:text-brand-300" href="https://github.com/riazaslam029" target="_blank">GitHub</a>
+        <a class="hover:text-brand-300" href="Profile.pdf" target="_blank">Resume</a>
+        <a class="hover:text-brand-300" href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank">LinkedIn</a>
       </div>
     </div>
   </footer>

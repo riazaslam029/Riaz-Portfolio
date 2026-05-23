@@ -317,25 +317,34 @@ function fallbackToMailto(name, email, message, resultEl, formEl){
 }
 
 /* ----------- GitHub project loader (public repos) ----------- */
-async function loadGitHubProjects(username = 'riazaslam029', limit = 6){
+async function loadGitHubProjects(username = 'riazaslam029', limit = 8){
   const container = document.getElementById('github-projects');
   if(!container) return;
-  container.innerHTML = '<div class="muted">Loading projects...</div>';
+  container.innerHTML = '<div class="col-span-full rounded-2xl border border-white/10 bg-white/5 p-6 text-slate-300">Loading projects from GitHub...</div>';
   try{
     const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=${limit}`);
     if(!res.ok) throw new Error('GitHub API error: ' + res.status);
-    const repos = await res.json();
+    const repos = (await res.json())
+      .filter(r => !r.fork && !r.archived)
+      .sort((a, b) => {
+        const starDelta = (b.stargazers_count || 0) - (a.stargazers_count || 0);
+        return starDelta !== 0 ? starDelta : new Date(b.updated_at) - new Date(a.updated_at);
+      })
+      .slice(0, limit);
     container.innerHTML = '';
     repos.forEach(r => {
       const card = document.createElement('article');
-      card.className = 'repo-card reveal';
+      card.className = 'repo-card reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl';
       card.innerHTML = `
-        <h4 style="margin:0 0 6px"><a href="${r.html_url}" target="_blank" rel="noopener">${r.name}</a></h4>
-        <p style="margin:0 0 8px;color:var(--text-muted)">${r.description || ''}</p>
-        <div class="repo-meta">
-          <div class="lang">${r.language || 'N/A'}</div>
-          <div>★ ${r.stargazers_count}</div>
-          <div style="margin-left:auto;color:var(--text-muted);font-size:0.85rem">Updated ${new Date(r.updated_at).toLocaleDateString()}</div>
+        <h4 class="mb-2 text-lg font-semibold text-white"><a href="${r.html_url}" target="_blank" rel="noopener">${r.name}</a></h4>
+        <p class="mb-4 min-h-[4.5rem] text-sm leading-6 text-slate-300">${r.description || 'No description provided yet.'}</p>
+        <div class="repo-meta flex flex-wrap items-center gap-2 text-sm text-slate-400">
+          <div class="lang rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1 font-semibold text-brand-200">${r.language || 'N/A'}</div>
+          <div class="rounded-full border border-white/10 bg-white/5 px-3 py-1">★ ${r.stargazers_count}</div>
+          <div class="ml-0 rounded-full border border-white/10 bg-white/5 px-3 py-1">Updated ${new Date(r.updated_at).toLocaleDateString()}</div>
+        </div>
+        <div class="mt-5">
+          <a class="inline-flex rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/5" href="${r.html_url}" target="_blank" rel="noopener">Open Repository</a>
         </div>
       `;
       container.appendChild(card);
@@ -343,7 +352,7 @@ async function loadGitHubProjects(username = 'riazaslam029', limit = 6){
     // run reveal observer on newly injected items
     initRevealObserver();
   }catch(err){
-    container.innerHTML = `<div class="muted">Could not load GitHub projects (${err.message}). Try again later.</div>`;
+    container.innerHTML = `<div class="col-span-full rounded-2xl border border-white/10 bg-white/5 p-6 text-slate-300">Could not load GitHub projects (${err.message}). Try again later.</div>`;
     console.warn(err);
   }
 }
@@ -380,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
   // Load GitHub projects into the `#github-projects` container
-  loadGitHubProjects('riazaslam029', 6);
+  loadGitHubProjects('riazaslam029', 8);
   // Init reveal observer for any items that exist on load
   initRevealObserver();
 
