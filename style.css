@@ -288,7 +288,7 @@ body {
 
 .hero {
   padding: 90px 0 80px 0;
-  background: linear-gradient(120deg, #e3f0ff 0%, #f7fafd 60%, #fffbe6 100%);
+  background: linear-gradient(135deg, #334155 0%, #475569 55%, #64748b 100%);
   min-height: 60vh;
   position: relative;
   isolation: isolate;
@@ -364,10 +364,10 @@ body {
 
 
 .contact-form {
-  background: linear-gradient(120deg, #f1f5fb 80%, #e3f0ff 100%);
+  background: linear-gradient(120deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%);
   border-radius: var(--radius);
   padding: 16px;
-  border: 1px solid #e3e8f0;
+  border: 1px solid rgba(255,255,255,0.10);
 }
 
 /* Contact grid layout (align contact info + form) */
@@ -376,20 +376,20 @@ body {
 
 .contact-form input,
 .contact-form textarea {
-  background: #fff;
-  color: var(--text);
-  border: 1px solid #dfe7f4;
+  background: rgba(15,23,42,0.75);
+  color: #f8fafc;
+  border: 1px solid rgba(255,255,255,0.14);
   width: 100%;
   padding: 12px 14px;
   border-radius: 10px;
   font-size: 0.97rem;
   transition: box-shadow 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
 }
-.contact-form label { display:block; margin-bottom:6px; color:var(--text); font-weight:600; }
+.contact-form label { display:block; margin-bottom:6px; color:#f8fafc; font-weight:600; }
 .contact-form textarea { min-height:120px; resize:vertical; }
 .contact-form input:focus, .contact-form textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 8px 28px rgba(79,140,255,0.12);
+  border-color: rgba(239,68,68,0.45);
+  box-shadow: 0 8px 28px rgba(239,68,68,0.18);
   transform: translateY(-1px);
 }
 
@@ -407,7 +407,7 @@ body {
 ==========================================================*/
 .section {
   padding: 60px 0;
-  background: #fff;
+  background: linear-gradient(135deg, #334155 0%, #334155 100%);
   border-radius: 0 0 40px 40px;
   margin-bottom: 24px;
 }
@@ -421,7 +421,7 @@ body {
 .section-heading {
   text-align: center;
   font-size: 1.6rem;
-  color: var(--text);
+  color: #f8fafc;
 }
 
 .section-heading::after {
@@ -516,40 +516,42 @@ body {
    PROJECTS
 ==========================================================*/
 .project-card {
-  background: linear-gradient(120deg, #e3f0ff 60%, #ffe6fa 100%);
+  background: linear-gradient(120deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%);
   border-radius: var(--radius);
   padding: 18px;
-  border: 1px solid #e3e8f0;
+  border: 1px solid rgba(255,255,255,0.10);
+  color: #f8fafc;
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
 .project-card:hover {
   transform: translateY(-8px) rotateZ(-0.2deg);
-  box-shadow: 0 18px 60px rgba(2,6,12,0.8);
+  box-shadow: 0 18px 60px rgba(2,6,12,0.45);
 }
 
 /* GitHub repo card */
 .repo-card {
-  background: linear-gradient(120deg, #f1f5fb 80%, #e3f0ff 100%);
-  border: 1px solid #e3e8f0;
+  background: linear-gradient(120deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%);
+  border: 1px solid rgba(255,255,255,0.10);
   border-radius: 10px;
   padding: 14px;
   display:flex;
   flex-direction:column;
   gap:8px;
+  color: #e2e8f0;
 }
 .repo-meta {
   display:flex;
   gap:8px;
   align-items:center;
-  color:var(--text-muted);
+  color:#cbd5e1;
   font-size:0.9rem;
 }
 .repo-meta .lang {
   padding:4px 8px;
-  background:rgba(79,140,255,0.10);
+  background:rgba(239,68,68,0.12);
   border-radius:999px;
-  color:var(--accent);
+  color:#fecaca;
   font-weight:600;
 }
 
@@ -558,16 +560,17 @@ body {
 ==========================================================*/
 
 .demo-section {
-  background: linear-gradient(120deg, #fffbe6 60%, #ffe6fa 100%);
-  border-top: 1px solid #ffe6fa;
+  background: linear-gradient(120deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 /* product card */
 .product-card {
-  background: linear-gradient(120deg, #e3f0ff 60%, #fffbe6 100%);
+  background: linear-gradient(120deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%);
   border-radius: var(--radius);
   padding: 12px;
-  border: 1px solid #e3e8f0;
+  border: 1px solid rgba(255,255,255,0.10);
+  color: #e2e8f0;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
@@ -578,10 +581,12 @@ body {
 
 /* cart */
 .cart-card {
-  background: linear-gradient(120deg, #f1f5fb 80%, #e3f0ff 100%);
+  background: linear-gradient(120deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%);
   border-radius: var(--radius);
   padding: 16px;
-  box-shadow: 0 12px 40px rgba(180,200,255,0.13);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 12px 40px rgba(2,6,12,0.35);
+  color: #e2e8f0;
 }
 
 .cart-item {
@@ -592,11 +597,13 @@ body {
    TIMELINE (Experience)
 ==========================================================*/
 .timeline-item {
-  background: linear-gradient(120deg, #e3f0ff 60%, #ffe6fa 100%);
+  background: linear-gradient(120deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%);
   padding: 16px;
   border-radius: var(--radius);
   margin-bottom: 12px;
-  box-shadow: 0 10px 30px rgba(180,200,255,0.13);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 10px 30px rgba(2,6,12,0.35);
+  color: #e2e8f0;
 }
 
 .timeline-item:hover {
@@ -607,31 +614,31 @@ body {
    CONTACT
 ==========================================================*/
 .contact-form {
-  background: linear-gradient(120deg, #f1f5fb 80%, #e3f0ff 100%);
+  background: linear-gradient(120deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%);
   border-radius: var(--radius);
   padding: 16px;
-  border: 1px solid #e3e8f0;
+  border: 1px solid rgba(255,255,255,0.10);
 }
 
 .contact-form input,
   .contact-form textarea {
-  background: #fff;
-  color: var(--text);
-  border: 1px solid #e3e8f0;
+  background: rgba(15,23,42,0.75);
+  color: #f8fafc;
+  border: 1px solid rgba(255,255,255,0.14);
 }
 
 .contact-form input:focus,
   .contact-form textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 12px 30px rgba(79,140,255,0.10);
+  border-color: rgba(239,68,68,0.45);
+  box-shadow: 0 12px 30px rgba(239,68,68,0.15);
 }
 
 /* =======================================================
    FOOTER
 ==========================================================*/
 .site-footer {
-  background: #f7fafd;
-  border-top: 1px solid #e3e8f0;
+  background: #334155;
+  border-top: 1px solid rgba(255,255,255,0.10);
   padding: 20px 0;
   text-align: center;
 }
