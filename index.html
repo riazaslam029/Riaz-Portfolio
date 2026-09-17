@@ -1,470 +1,778 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Riaz Aslam — Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Riaz Aslam — Software Engineering Undergraduate | AI & Systems Portfolio</title>
+  <meta name="description" content="Portfolio of Riaz Aslam — 3rd Year BS Software Engineering Student at COMSATS. Specializing in AI systems, embedded database storage engines, C++ DSA, and full-stack development." />
+  <meta name="keywords" content="Riaz Aslam, Software Engineering, COMSATS, Full Stack, FastAPI, React, AI, Gemini AI, CacheForge, Python, C++, GDGoC" />
+  <meta name="author" content="Riaz Aslam" />
 
-  <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Riaz Aslam — Software Engineering Portfolio" />
+  <meta property="og:description" content="Explore flagship software engineering projects: Acadexa AI, CacheForge Storage Engine, RankPilot ML, and full-stack live applications." />
+  <meta property="og:url" content="https://riazaslam029.github.io/Riaz-Portfolio/" />
+  <meta property="og:image" content="profile photo.jpg" />
 
-  <!-- Font Awesome for icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Google Fonts (Plus Jakarta Sans, Inter, JetBrains Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20260602" />
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'sans-serif'] },
-          colors: {
-            brand: {
-              50: '#fef2f2',
-              100: '#fee2e2',
-              200: '#fecaca',
-              300: '#fca5a5',
-              400: '#f87171',
-              500: '#ef4444',
-              600: '#dc2626',
-              700: '#b91c1c',
-              800: '#991b1b',
-              900: '#7f1d1d'
-            }
-          },
-          boxShadow: {
-            glow: '0 0 0 1px rgba(239,68,68,.12), 0 20px 60px rgba(220,38,38,.18)'
-          }
-        }
-      }
-    }
-  </script>
-  <meta name="description" content="Portfolio of Riaz Aslam — Software Engineering student, web developer, AI enthusiast.">
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-slate-700 font-sans text-slate-100 antialiased selection:bg-brand-400/30 selection:text-white">
+<body>
 
-  <!-- ====== NAV / HEADER ====== -->
-  <header class="site-header sticky top-0 z-40 border-b border-white/10 bg-slate-700/80 backdrop-blur-xl">
-    <div class="wrap header-row flex items-center justify-between py-4">
-      <div class="brand flex items-center gap-4">
-        <div class="brand-photo" id="brand-photo">
-          <!-- Replace profile-photo.jpg with your own image file -->
-          <img src="profile photo.jpg" alt="Riaz Aslam" onerror="this.style.opacity='.08'">
+  <!-- ====== HEADER & NAVIGATION ====== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand-link" aria-label="Riaz Aslam Home">
+        <div class="brand-avatar-mini">
+          <img src="profile photo.jpg" alt="Riaz Aslam" onerror="this.src='https://avatars.githubusercontent.com/u/222951998?v=4'" />
         </div>
-        <div>
-          <h1 class="brand-name text-lg font-bold tracking-tight text-white">Riaz Aslam</h1>
-          <p class="brand-sub text-sm text-slate-400">Software Engineering Student · Web Developer · AI Enthusiast</p>
+        <div class="brand-text">
+          <span class="brand-name">Riaz Aslam</span>
+          <span class="brand-role">BSSE '28 · Software Engineer</span>
         </div>
-      </div>
+      </a>
 
-      <div class="flex items-center gap-3">
-        <nav class="main-nav hidden gap-6 text-sm font-medium text-slate-300 md:flex" aria-label="Main Navigation">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <button id="mobileMenuToggle" class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-3 text-white transition hover:bg-white/10 md:hidden" aria-controls="mobileNavPanel" aria-expanded="false" aria-label="Open navigation menu">
+      <!-- Desktop Nav -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <i class="fas fa-sun"></i>
+        </button>
+
+        <a href="Riaz_Aslam_Portfolio.pdf" download="Riaz_Aslam_Resume.pdf" class="btn btn-secondary btn-sm" style="display: none;" id="headerResumeBtn">
+          <i class="fas fa-file-arrow-down"></i> Resume
+        </a>
+
+        <a href="#contact" class="btn btn-primary btn-sm">
+          Hire Me
+        </a>
+
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open mobile menu">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
-    <div id="mobileNavPanel" class="mobile-nav-panel hidden border-t border-white/10 bg-slate-700/95 px-4 pb-4 pt-2 md:hidden">
-      <nav class="flex flex-col gap-2 text-sm font-medium text-slate-300" aria-label="Mobile Navigation">
-        <a class="rounded-xl px-4 py-3 transition hover:bg-white/5 hover:text-white" href="#about">About</a>
-        <a class="rounded-xl px-4 py-3 transition hover:bg-white/5 hover:text-white" href="#skills">Skills</a>
-        <a class="rounded-xl px-4 py-3 transition hover:bg-white/5 hover:text-white" href="#projects">Projects</a>
-        <a class="rounded-xl px-4 py-3 transition hover:bg-white/5 hover:text-white" href="#experience">Experience</a>
-        <a class="rounded-xl px-4 py-3 transition hover:bg-white/5 hover:text-white" href="#contact">Contact</a>
-      </nav>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobileNavDrawer" class="mobile-nav-drawer">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#certifications" class="nav-link">Certifications</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="Riaz_Aslam_Portfolio.pdf" download="Riaz_Aslam_Resume.pdf" class="btn btn-secondary btn-sm" style="margin-top: 8px;">
+        <i class="fas fa-file-pdf"></i> Download Resume PDF
+      </a>
     </div>
   </header>
 
-  <!-- ====== HERO ====== -->
-  <section id="hero" class="hero reveal relative overflow-hidden bg-gradient-to-br from-slate-700 via-slate-600 to-slate-500 text-slate-100">
-    <div class="hero-mesh" aria-hidden="true">
-      <span class="hero-orb hero-orb-one"></span>
-      <span class="hero-orb hero-orb-two"></span>
-      <span class="hero-orb hero-orb-three"></span>
-    </div>
-    <div class="wrap hero-grid grid gap-10 py-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(340px,0.85fr)] lg:items-start">
-      <div class="hero-left max-w-3xl">
-        <div class="accent-bubble" aria-hidden="true"></div>
-        <p class="eyebrow mb-3 inline-flex items-center gap-2 rounded-full border border-brand-400/20 bg-brand-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-brand-200">Hello — I'm</p>
-        <h1 class="hero-title max-w-2xl text-5xl font-extrabold tracking-tight text-white sm:text-6xl">Riaz <span class="accent text-brand-300">Aslam</span></h1>
-        <p class="hero-lead mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-          Software Engineering student at COMSATS (CUI’28). I build clean, accessible and responsive web interfaces,
-          blend creative content with code, and explore AI & advanced Python.
+  <!-- ====== HERO SECTION ====== -->
+  <section id="hero" class="hero-section">
+    <!-- Interactive Canvas Particle Mesh -->
+    <canvas id="heroCanvas"></canvas>
+
+    <div class="hero-glow-sphere hero-glow-1"></div>
+    <div class="hero-glow-sphere hero-glow-2"></div>
+
+    <div class="container hero-content-grid">
+      <!-- Left Column: Pitch & Headline -->
+      <div class="hero-left-col">
+        <div class="recruiter-pill">
+          <span class="pulse-dot"></span>
+          <span>Open to Software Engineering Internships (2026/2027)</span>
+        </div>
+
+        <h1 class="hero-headline">
+          Engineering <span class="gradient-text">Intelligent Systems</span> &amp; Modern Architectures.
+        </h1>
+
+        <p class="hero-bio">
+          I am <strong>Riaz Aslam</strong>, a 3rd-year Software Engineering undergraduate at <strong>COMSATS University</strong> (CUI'28).
+          I build high-performance systems from the ground up — from embedded zero-dependency storage engines and C++ graph architectures, to production AI web applications powered by FastAPI, React, and Gemini AI.
         </p>
 
-        <div class="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200">
-          <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
-          Available for internships, freelance work, and collaboration
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-code-branch"></i> Explore Flagship Projects
+          </a>
+          <a href="Riaz_Aslam_Portfolio.pdf" download="Riaz_Aslam_Resume.pdf" class="btn btn-secondary" title="Download Resume">
+            <i class="fas fa-file-download"></i> Download Resume
+          </a>
+          <a href="#terminal" id="heroTerminalBtn" class="btn btn-ghost" title="Launch Interactive Terminal">
+            <i class="fas fa-terminal"></i> Launch CLI
+          </a>
         </div>
 
-        <div class="cta-row mt-8 flex flex-wrap items-center gap-3">
-          <a class="btn primary inline-flex items-center gap-2 rounded-full bg-brand-400 px-6 py-3 font-semibold text-slate-950 shadow-glow transition hover:-translate-y-0.5 hover:bg-brand-300" href="#projects">View Projects</a>
-          <a class="btn ghost inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 font-semibold text-white transition hover:border-brand-300/30 hover:bg-white/5" href="#contact">Contact Me</a>
-        </div>
-
-        <div class="mt-10 grid gap-4 sm:grid-cols-3">
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-glow backdrop-blur-xl">
-            <div class="text-2xl font-bold text-white">4+</div>
-            <div class="mt-1 text-sm text-slate-400">Featured projects</div>
+        <!-- Recruiter Quick Metrics Bar -->
+        <div class="metrics-strip">
+          <div class="metric-item">
+            <span class="metric-value gradient-text">22+</span>
+            <span class="metric-label">GitHub Repositories</span>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-glow backdrop-blur-xl">
-            <div class="text-2xl font-bold text-white">8+</div>
-            <div class="mt-1 text-sm text-slate-400">Live GitHub repos</div>
+          <div class="metric-item">
+            <span class="metric-value gradient-text">8+</span>
+            <span class="metric-label">AI &amp; Systems Projects</span>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-glow backdrop-blur-xl">
-            <div class="text-2xl font-bold text-white">100%</div>
-            <div class="mt-1 text-sm text-slate-400">Responsive mindset</div>
+          <div class="metric-item">
+            <span class="metric-value gradient-text">1081</span>
+            <span class="metric-label">FSc Pre-Eng (A+ Honors)</span>
           </div>
-        </div>
-
-        <div class="quick-links mt-8 flex flex-wrap gap-4 text-sm text-slate-300">
-          <a class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:border-brand-300/30 hover:bg-white/10" href="https://github.com/riazaslam029" target="_blank" rel="noopener">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:border-brand-300/30 hover:bg-white/10" href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank" rel="noopener">
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
-          <a class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:border-brand-300/30 hover:bg-white/10" href="mailto:riazaslam029@gmail.com">
-            <i class="far fa-envelope"></i> riazaslam029@gmail.com
-          </a>
+          <div class="metric-item">
+            <span class="metric-value gradient-text">GDGoC</span>
+            <span class="metric-label">Campus Social Co-Lead</span>
+          </div>
         </div>
       </div>
 
-      <div class="hero-right flex flex-col gap-4">
-        <div class="portrait-cloud rounded-[2rem] border border-white/10 bg-white/5 p-4 shadow-glow backdrop-blur-xl">
-          <div class="portrait-shell overflow-hidden rounded-[1.75rem] border border-white/20 bg-gradient-to-b from-slate-100 to-slate-200 p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
-            <div class="overflow-hidden rounded-[1.5rem] bg-slate-700">
-              <img src="profile photo.jpg" alt="Riaz Aslam portrait" class="hero-portrait-img h-[340px] w-full object-cover object-top" onerror="this.style.opacity='.08'">
+      <!-- Right Column: Glassmorphic Portrait Frame -->
+      <div class="hero-portrait-card">
+        <div class="portrait-glow-wrapper">
+          <div class="portrait-inner">
+            <img src="profile photo.jpg" alt="Riaz Aslam" class="hero-img" onerror="this.src='https://avatars.githubusercontent.com/u/222951998?v=4'" />
+            <div class="portrait-floating-badge">
+              <div>
+                <div class="badge-info-name">Riaz Aslam</div>
+                <div class="badge-info-sub">Software Engineering '28</div>
+              </div>
+              <div class="badge-status-icon" title="Active Developer">
+                <i class="fas fa-check-circle"></i>
+              </div>
             </div>
-          </div>
-          <div class="mt-4 flex items-center justify-between gap-3">
-            <div>
-              <p class="text-sm font-semibold text-slate-900">Riaz Aslam</p>
-              <p class="text-xs text-slate-700">Software Engineering Student · Web Developer</p>
-            </div>
-            <span class="rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1 text-xs font-semibold text-brand-200">Portfolio</span>
-          </div>
-        </div>
-
-        <!-- stylized card with highlights -->
-        <div class="card profile-card reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-          <div class="card-top">
-            <h3 class="text-base font-semibold text-white">Top Skills</h3>
-            <div class="skill-tags mt-4 flex flex-wrap gap-2">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>C++</span>
-              <span>Python</span>
-              <span>Git</span>
-              <span>OOP</span>
-            </div>
-          </div>
-
-          <div class="card-body mt-6">
-            <h4 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Quick facts</h4>
-            <ul class="facts mt-4 space-y-3 text-sm leading-6 text-slate-300">
-              <li><strong>University:</strong> COMSATS University, Lahore (Software Engineering)</li>
-              <li><strong>Role:</strong> Social Co-Lead @ GDGoC (Google Developer Group on Campus)</li>
-              <li><strong>Interests:</strong> AI, full-stack concepts, creative tech & video production</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- color strip showing certifications -->
-        <div class="card creds reveal rounded-3xl border border-white/10 bg-slate-600/70 p-6 shadow-glow backdrop-blur-xl">
-          <h4 class="text-base font-semibold text-white">Certifications & Awards</h4>
-          <div id="cert-list" class="mt-4">
-            <ul class="space-y-2 text-sm text-slate-300">
-              <li>Introduction to Git & GitHub</li>
-              <li>Google AI Essentials</li>
-              <li>Certificate of Appreciation — Hashtag Heros</li>
-              <li>Certificate of Appreciation in 404 Squad</li>
-            </ul>
-            <p class="mt-4 text-sm text-slate-400">More on <a class="text-brand-300 hover:text-brand-200" href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank" rel="noopener">LinkedIn</a></p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== ABOUT ====== -->
-  <section id="about" class="section reveal bg-slate-700 py-20 text-slate-100">
-    <div class="wrap section-grid grid gap-10 lg:grid-cols-2 lg:items-start">
-      <div class="col rounded-3xl border border-white/10 bg-white/5 p-8 shadow-glow backdrop-blur-xl">
-        <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-brand-400/20 bg-brand-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-brand-200">About Me</p>
-        <h2 class="text-3xl font-bold tracking-tight text-white">Building thoughtful digital experiences</h2>
-        <p class="mt-5 text-slate-300">
-          I am a Software Engineering student at COMSATS University (CUI’28) with a strong interest in software development,
-          problem-solving and creative technologies. I focus on building efficient, accessible user interfaces and exploring AI
-          and Python to add smarter features.
-        </p>
-
-        <p class="mt-4 text-slate-300">
-          I combine technical skills (C++, Python, HTML/CSS/JS) with content creation and team leadership — previously contributing
-          as Social Co-Lead at GDGoC and volunteering at TechnoVerse CUI.
-        </p>
-
-        <a class="btn outline mt-6 inline-flex rounded-full border border-brand-300/30 px-5 py-3 font-semibold text-white transition hover:bg-white/5" href="#contact">Hire / Contact</a>
-      </div>
-
-      <div class="col rounded-3xl border border-white/10 bg-slate-600/70 p-8 shadow-glow backdrop-blur-xl">
-        <h3 class="text-xl font-semibold text-white">Contact</h3>
-        <div class="contact-cards mt-5 space-y-4 text-sm text-slate-300">
-          <div class="flex items-center gap-3"><i class="far fa-envelope text-brand-300"></i><a class="hover:text-brand-200" href="mailto:riazaslam029@gmail.com">riazaslam029@gmail.com</a></div>
-          <div class="flex items-center gap-3"><i class="fab fa-linkedin text-brand-300"></i><a class="hover:text-brand-200" href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank">LinkedIn</a></div>
-          <div class="flex items-center gap-3"><i class="fab fa-github text-brand-300"></i><a class="hover:text-brand-200" href="https://github.com/riazaslam029" target="_blank">GitHub</a></div>
-          <div class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-brand-300"></i><span>Lahore, Punjab, Pakistan</span></div>
-        </div>
-
-        <h3 class="mt-8 text-xl font-semibold text-white">Creative</h3>
-        <p class="mt-4 text-slate-300">Video editing, social content creation and visual storytelling — I use these skills to present technical work clearly.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== SKILLS ====== -->
-  <section id="skills" class="section reveal bg-slate-700 py-20 text-slate-100">
-    <div class="wrap">
-      <h2 class="section-heading text-3xl font-bold tracking-tight text-white">Skills & Tools</h2>
-      <p class="mx-auto mt-4 max-w-3xl text-center text-sm leading-7 text-slate-300">
-        Core technologies I use across my projects and portfolio work.
-      </p>
-
-      <div class="skills-grid mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-          <h3 class="text-lg font-semibold text-white">HTML</h3>
-          <p class="mt-2 text-sm text-slate-300">Markup and structured page building.</p>
-        </div>
-
-        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-          <h3 class="text-lg font-semibold text-white">CSS</h3>
-          <p class="mt-2 text-sm text-slate-300">Styling, responsive layouts, and UI polish.</p>
-        </div>
-
-        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-          <h3 class="text-lg font-semibold text-white">JavaScript</h3>
-          <p class="mt-2 text-sm text-slate-300">Interactive behavior and dynamic frontend features.</p>
-        </div>
-
-        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-          <h3 class="text-lg font-semibold text-white">Python</h3>
-          <p class="mt-2 text-sm text-slate-300">Scripting, automation, and AI-related experiments.</p>
-        </div>
-
-        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-          <h3 class="text-lg font-semibold text-white">C++</h3>
-          <p class="mt-2 text-sm text-slate-300">Problem-solving, algorithms, and data structures.</p>
-        </div>
-
-        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-          <h3 class="text-lg font-semibold text-white">AI</h3>
-          <p class="mt-2 text-sm text-slate-300">AI fundamentals and practical learning projects.</p>
-        </div>
-
-        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-          <h3 class="text-lg font-semibold text-white">Web Development</h3>
-          <p class="mt-2 text-sm text-slate-300">Building modern, mobile-friendly web experiences.</p>
-        </div>
-
-        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-          <h3 class="text-lg font-semibold text-white">Git & GitHub</h3>
-          <p class="mt-2 text-sm text-slate-300">Version control and collaborative workflows.</p>
-        </div>
-
-        <div class="skill reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-          <h3 class="text-lg font-semibold text-white">OOP</h3>
-          <p class="mt-2 text-sm text-slate-300">Object-oriented design and clean coding practices.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== PROJECTS (includes e-commerce) ====== -->
-  <section id="projects" class="section reveal bg-slate-700 py-20 text-slate-100">
-    <div class="wrap">
-      <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+  <!-- ====== ABOUT / ENGINEERING PHILOSOPHY ====== -->
+  <section id="about" class="section-container" style="padding: 80px 0; background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: center;">
         <div>
-          <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-brand-400/20 bg-brand-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-brand-200">Selected Projects</p>
-          <h2 class="section-heading text-3xl font-bold tracking-tight text-white">Highlighted work and live GitHub repositories</h2>
+          <span class="section-tag"><i class="fas fa-user-astronaut"></i> About Me</span>
+          <h2 class="section-title">Bridging Low-Level Theory with High-Impact AI Applications</h2>
+          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.75; margin-bottom: 20px;">
+            As a 3rd-year Software Engineering student, I believe the best software engineers possess both an understanding of computer science fundamentals (data structures, memory layout, storage engines, concurrency) and modern web &amp; cloud engineering (REST APIs, generative models, microservices, reactive frontends).
+          </p>
+          <p style="color: var(--text-secondary); font-size: 1.02rem; line-height: 1.75;">
+            Whether implementing a <strong>write-ahead log (WAL)</strong> in Python for crash-resilient storage, engineering a <strong>C++ social graph</strong> using custom adjacency structures, or orchestrating <strong>Google Gemini and Amazon Bedrock</strong> into enterprise web portals, I prioritize clean architecture, automated testing, and developer ergonomics.
+          </p>
+          <div style="display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap;">
+            <a href="https://github.com/riazaslam029" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+              <i class="fab fa-github"></i> github.com/riazaslam029
+            </a>
+            <a href="https://www.linkedin.com/in/riazaslam/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+              <i class="fab fa-linkedin"></i> linkedin.com/in/riazaslam
+            </a>
+          </div>
         </div>
-        <p class="max-w-2xl text-sm leading-6 text-slate-400">A curated mix of featured projects plus your public GitHub repositories, presented in a polished, recruiter-friendly layout.</p>
+
+        <!-- Highlights Cards -->
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <div style="background: var(--bg-base); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 22px; display: flex; gap: 18px; align-items: flex-start;">
+            <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(56, 189, 248, 0.1); color: var(--accent-cyan); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0;">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <div>
+              <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Full-Stack &amp; Systems Craftsmanship</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+                Proficient across the full stack: React &amp; Next.js on the client, FastAPI &amp; Node.js on the server, PostgreSQL &amp; DuckDB for relational and analytical storage, plus low-level C++ for algorithmic rigor.
+              </p>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-base); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 22px; display: flex; gap: 18px; align-items: flex-start;">
+            <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(192, 132, 252, 0.1); color: var(--accent-purple); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0;">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div>
+              <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Applied AI &amp; Generative Intelligence</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+                Certified in Google AI Essentials. Active developer integrating Gemini API, Amazon Bedrock, Scikit-Learn, and XGBoost into real business applications with verifiable results.
+              </p>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-base); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 22px; display: flex; gap: 18px; align-items: flex-start;">
+            <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(52, 211, 153, 0.1); color: var(--accent-emerald); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0;">
+              <i class="fas fa-users-gear"></i>
+            </div>
+            <div>
+              <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Leadership &amp; Community Outreach</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+                Social Co-Lead at <strong>Google Developer Groups on Campus (GDGoC)</strong>. Organizing hackathons, workshops, and tech talks to mentor peer students in computing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FLAGSHIP PROJECTS ====== -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div style="display: flex; flex-direction: column; max-width: 720px; margin-bottom: 36px;">
+        <span class="section-tag"><i class="fas fa-laptop-code"></i> Engineering Showcase</span>
+        <h2 class="section-title">Flagship Projects &amp; System Implementations</h2>
+        <p class="section-desc">
+          Explore architectural solutions spanning AI services, embedded zero-dependency storage engines, machine learning search ranking, and production web applications.
+        </p>
       </div>
 
-      <!-- project grid -->
-      <div class="projects-grid mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <!-- Controls: Category Filter Pills + Live Search -->
+      <div class="project-controls">
+        <div class="filter-pills-row" role="tablist">
+          <button class="filter-pill active" data-category="all" role="tab">All Projects</button>
+          <button class="filter-pill" data-category="ai" role="tab">🤖 AI &amp; Machine Learning</button>
+          <button class="filter-pill" data-category="live" role="tab">🚀 Live Deployments</button>
+          <button class="filter-pill" data-category="systems" role="tab">⚙️ Systems &amp; C++ DSA</button>
+        </div>
 
-        <!-- Project: E-commerce (simplified showcase) -->
-        <article class="project-card project-ecom reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl" data-tech="HTML,CSS,JS">
-          <div class="project-header flex items-start justify-between gap-4">
-            <h3 class="text-xl font-semibold text-white">E-Commerce Demo (Front-end Shopping App)</h3>
-            <div class="label rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1 text-xs font-semibold text-brand-200">Featured</div>
+        <div class="project-search-bar">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="projectSearchInput" class="search-input" placeholder="Search by technology, keyword, or architecture..." aria-label="Search projects" />
+        </div>
+      </div>
+
+      <!-- Dynamic Projects Grid -->
+      <div id="projectsGrid" class="projects-grid">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+
+      <!-- More Public Repositories (Auto-Synced from GitHub) -->
+      <div style="margin-top: 60px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 36px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+          <div>
+            <span class="section-tag" style="margin-bottom: 8px;"><i class="fab fa-github"></i> Open Source</span>
+            <h3 style="font-size: 1.4rem;">Live GitHub Repositories</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem;">Directly pulled from <a href="https://github.com/riazaslam029" target="_blank" rel="noopener" style="color: var(--accent-cyan);">github.com/riazaslam029</a> (22 total public repositories).</p>
           </div>
-          <p class="project-desc mt-4 text-sm leading-7 text-slate-300">
-            Front-end e-commerce demo showcasing product listing, filters and cart interactions. Interactive demo removed
-            from the public site — source and screenshots are available on GitHub.
+          <a href="https://github.com/riazaslam029?tab=repositories" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+            View All on GitHub <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+          </a>
+        </div>
+
+        <div id="githubLiveGrid" class="projects-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+          <!-- Dynamically populated by script.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CORE SKILLS MATRIX ====== -->
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto 50px;">
+        <span class="section-tag"><i class="fas fa-screwdriver-wrench"></i> Technical Competencies</span>
+        <h2 class="section-title">Skills &amp; Engineering Matrix</h2>
+        <p style="color: var(--text-secondary); font-size: 1.02rem;">
+          Rigorous training across computer science foundations, modern frameworks, data infrastructure, and AI engineering.
+        </p>
+      </div>
+
+      <div class="skills-matrix-grid">
+        <!-- Languages -->
+        <div class="skill-domain-card fade-in-up">
+          <div class="domain-header">
+            <div class="domain-icon-box"><i class="fas fa-terminal"></i></div>
+            <h3 class="domain-title">Languages &amp; Core</h3>
+          </div>
+          <div class="skills-badge-collection">
+            <span class="skill-badge"><i class="fab fa-python" style="color: #38bdf8;"></i> Python</span>
+            <span class="skill-badge"><i class="fas fa-code" style="color: #60a5fa;"></i> C++</span>
+            <span class="skill-badge"><i class="fab fa-java" style="color: #f97316;"></i> Java</span>
+            <span class="skill-badge"><i class="fab fa-js" style="color: #eab308;"></i> TypeScript</span>
+            <span class="skill-badge"><i class="fab fa-js-square" style="color: #facc15;"></i> JavaScript (ES6+)</span>
+            <span class="skill-badge"><i class="fas fa-database" style="color: #34d399;"></i> SQL</span>
+            <span class="skill-badge"><i class="fas fa-file-code" style="color: #818cf8;"></i> C</span>
+          </div>
+        </div>
+
+        <!-- Systems & CS Fundamentals -->
+        <div class="skill-domain-card fade-in-up">
+          <div class="domain-header">
+            <div class="domain-icon-box"><i class="fas fa-microchip"></i></div>
+            <h3 class="domain-title">Systems &amp; CS Core</h3>
+          </div>
+          <div class="skills-badge-collection">
+            <span class="skill-badge">Data Structures (DSA)</span>
+            <span class="skill-badge">OOP Architecture</span>
+            <span class="skill-badge">Graph Theory (BFS/DFS)</span>
+            <span class="skill-badge">Storage Engines (WAL)</span>
+            <span class="skill-badge">Memory Management</span>
+            <span class="skill-badge">ACID Transactions</span>
+            <span class="skill-badge">Algorithm Optimization</span>
+          </div>
+        </div>
+
+        <!-- AI & Machine Learning -->
+        <div class="skill-domain-card fade-in-up">
+          <div class="domain-header">
+            <div class="domain-icon-box"><i class="fas fa-brain"></i></div>
+            <h3 class="domain-title">AI &amp; Data Engineering</h3>
+          </div>
+          <div class="skills-badge-collection">
+            <span class="skill-badge">Google Gemini AI</span>
+            <span class="skill-badge">Amazon Bedrock</span>
+            <span class="skill-badge">Scikit-Learn</span>
+            <span class="skill-badge">XGBoost</span>
+            <span class="skill-badge">DuckDB (Columnar OLAP)</span>
+            <span class="skill-badge">Pandas &amp; NumPy</span>
+            <span class="skill-badge">Prompt Engineering</span>
+          </div>
+        </div>
+
+        <!-- Full-Stack & Tooling -->
+        <div class="skill-domain-card fade-in-up">
+          <div class="domain-header">
+            <div class="domain-icon-box"><i class="fas fa-cubes"></i></div>
+            <h3 class="domain-title">Full-Stack &amp; Cloud</h3>
+          </div>
+          <div class="skills-badge-collection">
+            <span class="skill-badge"><i class="fab fa-react" style="color: #38bdf8;"></i> React &amp; Next.js</span>
+            <span class="skill-badge">FastAPI (Python)</span>
+            <span class="skill-badge"><i class="fab fa-node-js" style="color: #22c55e;"></i> Node.js</span>
+            <span class="skill-badge">Tailwind CSS</span>
+            <span class="skill-badge">PostgreSQL</span>
+            <span class="skill-badge">Streamlit</span>
+            <span class="skill-badge">Qt GUI &amp; JavaFX</span>
+            <span class="skill-badge"><i class="fab fa-git-alt" style="color: #f43f5e;"></i> Git &amp; GitHub</span>
+            <span class="skill-badge">Vercel Deployment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== EXPERIENCE & EDUCATION TIMELINE ====== -->
+  <section id="experience" class="timeline-section">
+    <div class="container">
+      <div style="max-width: 680px; margin-bottom: 40px;">
+        <span class="section-tag"><i class="fas fa-briefcase"></i> Track Record</span>
+        <h2 class="section-title">Experience, Leadership &amp; Education</h2>
+        <p class="section-desc">
+          Balancing strong academic honors in Software Engineering with student leadership, technical mentoring, and real-world project delivery.
+        </p>
+      </div>
+
+      <div class="timeline-two-col">
+        <!-- Experience & Leadership Column -->
+        <div>
+          <h3 class="timeline-column-heading"><i class="fas fa-people-group"></i> Leadership &amp; Experience</h3>
+          <div class="timeline-stack">
+            <!-- GDGoC Role -->
+            <div class="timeline-entry fade-in-up">
+              <div class="timeline-meta-row">
+                <span class="timeline-period">Sep 2025 — Present</span>
+                <span class="timeline-highlight-pill">Leadership</span>
+              </div>
+              <h4 class="timeline-role">Social Co-Lead</h4>
+              <div class="timeline-org">Google Developer Groups on Campus (GDGoC) — COMSATS Lahore</div>
+              <p class="timeline-desc">
+                Co-leading developer outreach, technical events, workshops, and community communications. Collaborating with lead organizers to design hands-on coding sessions and hackathons for student developers.
+              </p>
+            </div>
+
+            <!-- Tech Hierarchy -->
+            <div class="timeline-entry fade-in-up">
+              <div class="timeline-meta-row">
+                <span class="timeline-period">Sep 2024 — Oct 2025</span>
+                <span class="timeline-highlight-pill">Technical Community</span>
+              </div>
+              <h4 class="timeline-role">Active Member &amp; Event Contributor</h4>
+              <div class="timeline-org">Tech Hierarchy — COMSATS University</div>
+              <p class="timeline-desc">
+                Contributed to organizing university technical seminars, programming competitions, and peer mentorship initiatives across software engineering cohorts.
+              </p>
+            </div>
+
+            <!-- Freelance & Content -->
+            <div class="timeline-entry fade-in-up">
+              <div class="timeline-meta-row">
+                <span class="timeline-period">2024 — Present</span>
+                <span class="timeline-highlight-pill">Content &amp; Tech</span>
+              </div>
+              <h4 class="timeline-role">Freelance Technical Storyteller &amp; Video Producer</h4>
+              <div class="timeline-org">Self-Employed / Independent</div>
+              <p class="timeline-desc">
+                Leveraging digital media production, motion design, and video editing to present complex technical software architectures and educational content clearly to diverse audiences.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Column -->
+        <div>
+          <h3 class="timeline-column-heading"><i class="fas fa-graduation-cap"></i> Academic Qualifications</h3>
+          <div class="timeline-stack">
+            <!-- COMSATS -->
+            <div class="timeline-entry fade-in-up">
+              <div class="timeline-meta-row">
+                <span class="timeline-period">2024 — 2028 (In Progress)</span>
+                <span class="timeline-highlight-pill">3rd Year Undergrad</span>
+              </div>
+              <h4 class="timeline-role">Bachelor of Science in Software Engineering (BSSE)</h4>
+              <div class="timeline-org">COMSATS University Islamabad, Lahore Campus</div>
+              <p class="timeline-desc">
+                Core coursework: Object-Oriented Programming (OOP), Data Structures &amp; Algorithms (DSA), Database Systems, Software Design &amp; Architecture, Operating Systems, Computer Networks. Consistently maintaining strong academic standing.
+              </p>
+            </div>
+
+            <!-- KIPS College -->
+            <div class="timeline-entry fade-in-up">
+              <div class="timeline-meta-row">
+                <span class="timeline-period">Completed 2023</span>
+                <span class="timeline-highlight-pill">Score: 1081 / 1100</span>
+              </div>
+              <h4 class="timeline-role">Intermediate (FSc Pre-Engineering)</h4>
+              <div class="timeline-org">KIPS College Lahore</div>
+              <p class="timeline-desc">
+                Graduated with <strong>1081 out of 1100 marks (A+ Grade)</strong>, reflecting exceptional mathematical and analytical problem-solving aptitude.
+              </p>
+            </div>
+
+            <!-- School -->
+            <div class="timeline-entry fade-in-up">
+              <div class="timeline-meta-row">
+                <span class="timeline-period">Completed 2021</span>
+                <span class="timeline-highlight-pill">Score: 1031 / 1100</span>
+              </div>
+              <h4 class="timeline-role">Matriculation (Science)</h4>
+              <div class="timeline-org">Nishter School Lahore</div>
+              <p class="timeline-desc">
+                Completed with <strong>1031 out of 1100 marks (A+ Grade)</strong> with distinctions in Mathematics and Physics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CERTIFICATIONS & RECOGNITIONS ====== -->
+  <section id="certifications" class="certs-section">
+    <div class="container">
+      <div style="max-width: 680px; margin-bottom: 36px;">
+        <span class="section-tag"><i class="fas fa-certificate"></i> Verified Credentials</span>
+        <h2 class="section-title">Certifications &amp; Honors</h2>
+        <p class="section-desc">
+          Continuous professional development through recognized industry credentials and campus contributions.
+        </p>
+      </div>
+
+      <div class="certs-grid">
+        <!-- Google AI Essentials -->
+        <div class="cert-card fade-in-up">
+          <div class="cert-icon-seal"><i class="fab fa-google"></i></div>
+          <div class="cert-info">
+            <h4>Google AI Essentials</h4>
+            <div class="cert-issuer">Google / Coursera</div>
+            <div class="cert-year">Core AI Prompting, Ethics &amp; Tooling</div>
+          </div>
+        </div>
+
+        <!-- Git & GitHub -->
+        <div class="cert-card fade-in-up">
+          <div class="cert-icon-seal"><i class="fab fa-github"></i></div>
+          <div class="cert-info">
+            <h4>Introduction to Git &amp; GitHub</h4>
+            <div class="cert-issuer">GitHub Professional Workflow</div>
+            <div class="cert-year">Branching, PRs, Merge Strategies &amp; CI/CD</div>
+          </div>
+        </div>
+
+        <!-- GitHub Copilot Agent Mode -->
+        <div class="cert-card fade-in-up">
+          <div class="cert-icon-seal"><i class="fas fa-robot"></i></div>
+          <div class="cert-info">
+            <h4>Copilot Agent Mode Applications</h4>
+            <div class="cert-issuer">GitHub Skills</div>
+            <div class="cert-year">Autonomous Agent Workflows &amp; LLM Dev</div>
+          </div>
+        </div>
+
+        <!-- Certificate of Appreciation - Hashtag Heros -->
+        <div class="cert-card fade-in-up">
+          <div class="cert-icon-seal"><i class="fas fa-award"></i></div>
+          <div class="cert-info">
+            <h4>Certificate of Appreciation</h4>
+            <div class="cert-issuer">Hashtag Heros</div>
+            <div class="cert-year">Digital Outreach &amp; Event Leadership</div>
+          </div>
+        </div>
+
+        <!-- Certificate of Appreciation - 404 Squad -->
+        <div class="cert-card fade-in-up">
+          <div class="cert-icon-seal"><i class="fas fa-medal"></i></div>
+          <div class="cert-info">
+            <h4>Certificate of Appreciation</h4>
+            <div class="cert-issuer">404 Squad — COMSATS</div>
+            <div class="cert-year">Technical Event Execution &amp; Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT & RECRUITER ACTION CENTER ====== -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div style="max-width: 680px; margin-bottom: 40px;">
+        <span class="section-tag"><i class="fas fa-envelope-open-text"></i> Let's Connect</span>
+        <h2 class="section-title">Ready to Collaborate or Hire?</h2>
+        <p class="section-desc">
+          I am actively seeking <strong>Software Engineering Internships and Junior Developer roles (2026/2027)</strong>. Reach out directly or submit a message below.
+        </p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Left: Direct Channels & Actions -->
+        <div class="contact-info-panel">
+          <div class="contact-card-box">
+            <h3 style="font-size: 1.25rem; margin-bottom: 20px;">Direct Communication Channels</h3>
+
+            <!-- Email -->
+            <div class="contact-channel-item">
+              <div class="channel-left">
+                <div class="channel-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <div class="channel-text-label">Primary Email</div>
+                  <a href="mailto:riazaslam029@gmail.com" class="channel-text-val">riazaslam029@gmail.com</a>
+                </div>
+              </div>
+              <button class="copy-btn copy-email-btn" data-email="riazaslam029@gmail.com" title="Copy email address">
+                <i class="far fa-copy"></i> Copy
+              </button>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-channel-item">
+              <div class="channel-left">
+                <div class="channel-icon"><i class="fas fa-phone"></i></div>
+                <div>
+                  <div class="channel-text-label">Phone / WhatsApp</div>
+                  <a href="tel:+923067416280" class="channel-text-val">+92 306 7416280</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="contact-channel-item">
+              <div class="channel-left">
+                <div class="channel-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                  <div class="channel-text-label">Location</div>
+                  <div class="channel-text-val">Lahore, Punjab, Pakistan</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="contact-channel-item">
+              <div class="channel-left">
+                <div class="channel-icon"><i class="fab fa-linkedin-in"></i></div>
+                <div>
+                  <div class="channel-text-label">LinkedIn Profile</div>
+                  <a href="https://www.linkedin.com/in/riazaslam/" target="_blank" rel="noopener" class="channel-text-val">linkedin.com/in/riazaslam</a>
+                </div>
+              </div>
+              <a href="https://www.linkedin.com/in/riazaslam/" target="_blank" rel="noopener" class="copy-btn">
+                Visit &rarr;
+              </a>
+            </div>
+
+            <!-- GitHub -->
+            <div class="contact-channel-item">
+              <div class="channel-left">
+                <div class="channel-icon"><i class="fab fa-github"></i></div>
+                <div>
+                  <div class="channel-text-label">GitHub</div>
+                  <a href="https://github.com/riazaslam029" target="_blank" rel="noopener" class="channel-text-val">github.com/riazaslam029</a>
+                </div>
+              </div>
+              <a href="https://github.com/riazaslam029" target="_blank" rel="noopener" class="copy-btn">
+                Follow &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Resume Download Box -->
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div>
+              <h4 style="font-size: 1.05rem; margin-bottom: 2px;">Official Resume PDF</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Includes detailed academic coursework and project metrics.</p>
+            </div>
+            <a href="Riaz_Aslam_Portfolio.pdf" download="Riaz_Aslam_Resume.pdf" class="btn btn-primary btn-sm">
+              <i class="fas fa-file-pdf"></i> Download PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Message Form -->
+        <div class="contact-form-panel">
+          <h3 style="font-size: 1.35rem; margin-bottom: 8px;">Send a Direct Message</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 24px;">
+            Have a question or role in mind? Fill out this form and I will get back to you promptly.
           </p>
 
-          <ul class="project-details mt-4 space-y-2 text-sm text-slate-400">
-            <li><strong>Role:</strong> Lead developer (frontend, Backend)</li>
-            <li><strong>Stack:</strong> Java, JavaFX (no frameworks)</li>
-          </ul>
+          <form id="contactForm" aria-label="Recruiter contact form">
+            <div class="form-group">
+              <label for="formName" class="form-label">Your Name</label>
+              <input type="text" id="formName" name="name" class="form-input" placeholder="e.g. Alex Smith" required />
+            </div>
 
-          <div class="project-actions mt-6">
-            <a class="btn ghost small inline-flex rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/5" href="https://github.com/riazaslam029" target="_blank">View Source</a>
-          </div>
-        </article>
+            <div class="form-group">
+              <label for="formEmail" class="form-label">Email Address</label>
+              <input type="email" id="formEmail" name="email" class="form-input" placeholder="alex@company.com" required />
+            </div>
 
-        <!-- Project: Portfolio repo (this site) -->
-        <article class="project-card reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl" data-tech="HTML,CSS,JS">
-          <div class="project-header flex items-start justify-between gap-4">
-            <h3 class="text-xl font-semibold text-white">Personal Portfolio (This Site)</h3>
-            <div class="label rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1 text-xs font-semibold text-brand-200">Web</div>
-          </div>
-          <p class="project-desc mt-4 text-sm leading-7 text-slate-300">This live portfolio — responsive, accessible and modern — to showcase projects, resume and contact options.</p>
-          <ul class="project-details mt-4 space-y-2 text-sm text-slate-400">
-            <li><strong>Stack:</strong> HTML, CSS, JavaScript</li>
-            <li><strong>Link:</strong> <a href="https://github.com/riazaslam029" target="_blank">github.com/riazaslam029</a></li>
-          </ul>
-          <div class="project-actions mt-6">
-            <a class="btn ghost small inline-flex rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/5" href="https://github.com/riazaslam029" target="_blank">Open GitHub</a>
-          </div>
-        </article>
+            <div class="form-group">
+              <label for="formSubject" class="form-label">Subject / Role</label>
+              <input type="text" id="formSubject" name="subject" class="form-input" placeholder="Software Engineering Internship / Project Discussion" />
+            </div>
 
-        <!-- Placeholder for other projects discovered on your GitHub -->
-        <article class="project-card reveal rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl" data-tech="C++,Python">
-          <div class="project-header flex items-start justify-between gap-4">
-            <h3 class="text-xl font-semibold text-white">Algorithms & C++ Projects</h3>
-            <div class="label rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1 text-xs font-semibold text-brand-200">C++</div>
-          </div>
-          <p class="project-desc mt-4 text-sm leading-7 text-slate-300">Collection of algorithm implementations and coursework in C++ — data structures, small utilities and problem solving examples.</p>
-          <div class="project-actions mt-6">
-            <a class="btn ghost small inline-flex rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/5" href="https://github.com/riazaslam029" target="_blank">Explore Repositories</a>
-          </div>
-        </article>
+            <div class="form-group">
+              <label for="formMessage" class="form-label">Message</label>
+              <textarea id="formMessage" name="message" class="form-textarea" placeholder="Tell me about the opportunity, requirements, or timeline..." required></textarea>
+            </div>
 
-      </div> <!-- /projects-grid -->
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
 
-      <!-- GitHub Projects (populated by script.js) -->
-      <div style="margin-top:28px" class="reveal rounded-3xl border border-white/10 bg-slate-600/70 p-6 shadow-glow backdrop-blur-xl">
-        <h3 class="text-xl font-semibold text-white">Live GitHub Projects</h3>
-        <p class="mt-2 text-sm text-slate-400">Pulled directly from your public GitHub repositories.</p>
-        <div id="github-projects" class="projects-grid mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          <!-- JS will inject repo cards here -->
+            <div id="formStatusMsg" class="form-status-msg" role="status"></div>
+          </form>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ====== EXPERIENCE ====== -->
-  <section id="experience" class="section reveal bg-slate-600 py-20 text-slate-100">
-    <div class="wrap">
-      <h2 class="section-heading text-3xl font-bold tracking-tight text-white">Experience & Education</h2>
-
-      <div class="timeline mt-10 space-y-4">
-        <div class="timeline-item rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-          <div class="ti-left">
-            <h4 class="text-lg font-semibold text-white">Social Co-Lead — GDGoC, COMSATS</h4>
-            <span class="muted text-sm text-slate-400">September 2025 — Present</span>
-          </div>
-          <div class="ti-right">
-            <p class="mt-3 text-slate-300">Co-leading community outreach and social activities for the campus Google Developer Group — content strategy, event promotion and collaboration.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-          <div class="ti-left">
-            <h4 class="text-lg font-semibold text-white">Member — Tech Hierarchy</h4>
-            <span class="muted text-sm text-slate-400">September 2024 — October 2025</span>
-          </div>
-          <div class="ti-right"><p class="mt-3 text-slate-300">Active member contributing to technical events and workshops.</p></div>
-        </div>
-
-        <div class="timeline-item rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-          <div class="ti-left">
-            <h4 class="text-lg font-semibold text-white">Freelance Content Creator</h4>
-            <span class="muted text-sm text-slate-400">Sep 2024 — July 2025</span>
-          </div>
-          <div class="ti-right"><p class="mt-3 text-slate-300">Created social content and video edits to support client/educational promotion.</p></div>
-        </div>
-
-        <div class="timeline-item rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-          <div class="ti-left">
-            <h4 class="text-lg font-semibold text-white">Education</h4>
-            <span class="muted text-sm text-slate-400">COMSATS University Lahore — Software Engineering (2024–2028)</span>
-          </div>
-          <div class="ti-right"></div>
-        </div>
-      </div>
-
-      
-    </div>
-  </section>
-
-  <!-- ====== CONTACT ====== -->
-  <section id="contact" class="section alt reveal bg-slate-700 py-20 text-slate-100">
-    <div class="wrap contact-grid grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-glow backdrop-blur-xl">
-        <h2 class="section-heading text-3xl font-bold tracking-tight text-white">Get in Touch</h2>
-        <p class="mt-4 text-slate-300">If you'd like to discuss a role, internship or project — email me or open a GitHub issue on any repo.</p>
-
-        <div class="contact-card mt-6 space-y-4 text-sm text-slate-300">
-          <div class="flex items-center gap-3"><i class="far fa-envelope text-brand-300"></i><a class="hover:text-brand-200" href="mailto:riazaslam029@gmail.com">riazaslam029@gmail.com</a></div>
-          <div class="flex items-center gap-3"><i class="fab fa-linkedin text-brand-300"></i><a class="hover:text-brand-200" href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank">LinkedIn</a></div>
-          <div class="flex items-center gap-3"><i class="fab fa-github text-brand-300"></i><a class="hover:text-brand-200" href="https://github.com/riazaslam029" target="_blank">GitHub</a></div>
-        </div>
-      </div>
-
-      <form id="contactForm" class="contact-form rounded-3xl border border-white/10 bg-slate-600 p-8 shadow-glow backdrop-blur-xl" aria-label="Contact form">
-        <label for="cname">Name</label>
-        <input id="cname" name="name" type="text" placeholder="Your name" required>
-
-        <label for="cemail">Email</label>
-        <input id="cemail" name="email" type="email" placeholder="you@example.com" required>
-
-        <label for="cmessage">Message</label>
-        <textarea id="cmessage" name="message" rows="5" placeholder="How can I help?" required></textarea>
-
-        <div class="form-actions mt-5 flex flex-wrap gap-3">
-          <button class="btn primary inline-flex rounded-full bg-brand-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-brand-300" type="submit">Send Message</button>
-          <button class="btn ghost inline-flex rounded-full border border-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/5" type="reset">Reset</button>
-        </div>
-
-        <div id="contactResult" class="muted tiny mt-4 text-sm text-slate-400" aria-live="polite"></div>
-      </form>
     </div>
   </section>
 
   <!-- ====== FOOTER ====== -->
-  <footer class="site-footer border-t border-white/10 bg-slate-700 py-8 text-sm text-slate-400">
-    <div class="wrap footer-row flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-      <div>&copy; <span id="year"></span> Riaz Aslam</div>
-      <div class="footer-links flex flex-wrap gap-4">
-        <a class="hover:text-brand-300" href="https://github.com/riazaslam029" target="_blank">GitHub</a>
-        <a class="hover:text-brand-300" href="Riaz_Aslam_Portfolio.pdf" target="_blank" download>Resume</a>
-        <a class="hover:text-brand-300" href="https://www.linkedin.com/in/riaz-aslam-0bb69b310/" target="_blank">LinkedIn</a>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        &copy; <span id="yearSpan">2026</span> <strong>Riaz Aslam</strong> — Software Engineering Portfolio. Built with precision.
+      </div>
+      <div class="footer-nav">
+        <a href="https://github.com/riazaslam029" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/riazaslam/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="Riaz_Aslam_Portfolio.pdf" download="Riaz_Aslam_Resume.pdf"><i class="fas fa-file-arrow-down"></i> Resume</a>
+        <a href="#hero"><i class="fas fa-arrow-up"></i> Top</a>
       </div>
     </div>
   </footer>
 
-  <!-- Main JS -->
-  <!-- Contact configuration: set your Formspree endpoint to enable automatic delivery.
-       Example: window.CONTACT_CONFIG = { provider: 'formspree', formspreeEndpoint: 'https://formspree.io/f/abcd1234' };
-       If left empty, the form will fall back to opening the visitor's mail client. -->
+  <!-- ====== ARCHITECTURE DEEP-DIVE MODAL ====== -->
+  <div id="projectModalBackdrop" class="project-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="project-modal-content" id="projectModal">
+      <div class="modal-header">
+        <div class="modal-title-area">
+          <span id="modalBadge" class="project-category-tag" style="margin-bottom: 8px; display: inline-block;">System Architecture</span>
+          <h3 id="modalTitle">Project Title</h3>
+        </div>
+        <button id="modalCloseBtn" class="modal-close-btn" aria-label="Close dialog">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="modal-scroll-body">
+        <div>
+          <div class="modal-section-title">Architectural Overview</div>
+          <p id="modalOverview" class="modal-text"></p>
+        </div>
+
+        <div>
+          <div class="modal-section-title">Key Engineering Highlights</div>
+          <ul id="modalHighlights" class="modal-bullets"></ul>
+        </div>
+
+        <div>
+          <div class="modal-section-title">Technology Stack</div>
+          <div id="modalStack" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;"></div>
+        </div>
+
+        <div id="modalMetrics"></div>
+      </div>
+
+      <div class="modal-footer">
+        <a id="modalCodeLink" href="#" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+          <i class="fab fa-github"></i> View GitHub Source
+        </a>
+        <a id="modalLiveLink" href="#" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="display: none;">
+          <i class="fas fa-external-link-alt"></i> Open Live Deployment
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== FLOATING DEVELOPER CLI TRIGGER & MODAL ====== -->
+  <button id="terminalDockTrigger" class="terminal-dock-trigger" title="Launch Interactive Terminal (riaz-cli)">
+    <i class="fas fa-terminal"></i>
+    <span>riaz-cli</span>
+  </button>
+
+  <div id="terminalBackdrop" class="terminal-modal-backdrop" role="dialog" aria-modal="true" aria-label="Interactive Terminal">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-traffic-lights">
+          <div id="terminalCloseDot" class="terminal-dot dot-red" title="Close CLI"></div>
+          <div class="terminal-dot dot-yellow"></div>
+          <div class="terminal-dot dot-green"></div>
+        </div>
+        <div class="terminal-title">riaz@portfolio-v2: ~ (interactive shell)</div>
+        <div style="width: 40px;"></div>
+      </div>
+
+      <div id="terminalBody" class="terminal-body">
+        <div style="margin-bottom: 12px; color: var(--text-muted); font-size: 0.8rem; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 8px;">
+          Welcome to <strong style="color: var(--accent-cyan)">Riaz Aslam's Recruiter CLI</strong> [Version 2.4.0]<br/>
+          Type <span style="color: var(--accent-emerald)">'help'</span> to see commands, or <span style="color: var(--accent-emerald)">'projects'</span> to review flagship repositories.
+        </div>
+
+        <div id="terminalHistory" class="terminal-history"></div>
+
+        <div class="terminal-input-row">
+          <span class="terminal-prompt">recruiter@riaz-cli:~$</span>
+          <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" spellcheck="false" autofocus />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== TOAST NOTIFICATION ====== -->
+  <div id="toastNotice" class="toast-notice" role="status" aria-live="polite"></div>
+
+  <!-- Contact Form Endpoint Configuration:
+       To enable automatic email delivery without opening a mail client,
+       replace '' with your Formspree endpoint (e.g. 'https://formspree.io/f/mqkenjzy') -->
   <script>
     window.CONTACT_CONFIG = window.CONTACT_CONFIG || {
-      provider: 'formspree',
-      formspreeEndpoint: '' // <-- paste your Formspree endpoint here to enable automatic email delivery
+      provider: 'auto',
+      formspreeEndpoint: ''
     };
   </script>
+
+  <!-- Portfolio Logic Engine -->
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,185 +1,92 @@
-# 🌐 Riaz Aslam — Personal Portfolio
+# 🌐 Riaz Aslam — Software Engineering Portfolio
 
-Welcome to my personal portfolio repository! This website showcases my background, technical skills, projects, certifications, achievements, and ways to connect with me.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Status: Live](https://img.shields.io/badge/Status-Live-emerald.svg)](https://riazaslam029.github.io/Riaz-Portfolio/)
+[![Student: BSSE](https://img.shields.io/badge/Degree-BS_Software_Engineering-purple.svg)](https://lahore.comsats.edu.pk/)
 
-## 🚀 Live Portfolio
+Welcome to the official portfolio of **Riaz Aslam**, a 3rd-year Software Engineering undergraduate at **COMSATS University Islamabad (Lahore Campus)**, campus **GDGoC Social Co-Lead**, and systems/AI developer.
 
-🔗 **Visit Here:** https://riazaslam029.github.io/Riaz-Portfolio/
+🔗 **Live Website:** [https://riazaslam029.github.io/Riaz-Portfolio/](https://riazaslam029.github.io/Riaz-Portfolio/)
+
+---
+
+## ⚡ Highlights & Innovations
+
+- 🖥️ **Interactive Recruiter CLI (`riaz-cli`)**: An in-browser terminal emulator supporting interactive commands (`help`, `projects`, `skills`, `edu`, `exp`, `hire`, `cat resume`, `theme`).
+- 🌌 **Physics-Based Canvas Particle Mesh**: An interactive constellation network in the hero section that dynamically responds to cursor movement and gravity.
+- 🚀 **Flagship Engineering Showcase**:
+  - **Acadexa AI**: Academic management platform built with React, FastAPI, PostgreSQL, and Google Gemini AI.
+  - **CacheForge**: Zero-dependency embedded storage engine in Python featuring write-ahead logging (WAL), B-Tree indexing, TTL expiration, and crash recovery.
+  - **Personal AI Study Coach (Kiro)**: Live production web application deployed on Vercel (`personal-ai-study-coach-kiro.vercel.app`).
+  - **RankPilot AI**: Search Intelligence & Content Recommendation Platform using Machine Learning (XGBoost), FastAPI, Streamlit, and embedded DuckDB.
+  - **Smart Inventory & Sales System**: Live enterprise application deployed on Vercel (`smart-inventory-and-sales-managemen-omega.vercel.app`).
+  - **C++ DSA Social Network**: Adjacency-list graph network with BFS traversal, custom hash tables, and priority queue feed ranking.
+- 🔍 **Dynamic Real-Time Search & Category Filters**: Filter across AI & Machine Learning, Live Deployments, and Systems & C++ DSA with instant keystroke matching.
+- 🔬 **System Architecture Deep-Dive Modal**: Inspect technical specifications, engineering tradeoffs, and stack details for each project.
+- 🌓 **Persisted Theme Engine**: Cyber Dark mode by default with seamless toggle to Executive Light mode.
+- 🔄 **GitHub Live API Sync**: Dynamically loads real-time stats and repositories from `riazaslam029`'s 22 public repos with offline fallback.
+- 📬 **Recruiter Action Center**: 1-click email copy with animated toast notification, Formspree API submission, and mailto fallback.
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** Semantic HTML5, Vanilla CSS3 (Custom Design Tokens, Glassmorphism, CSS Grid), Vanilla JavaScript (ES6+ Classes & Modules)
+- **Visuals & Typography:** Plus Jakarta Sans, Inter, JetBrains Mono, FontAwesome 6
+- **Graphics:** HTML5 Canvas API (Physics particles & line distance thresholding)
+- **Deployment:** GitHub Pages / Vercel Edge
 
 ---
 
 ## 📂 Project Structure
 
 ```
-├── index.html          # Main website
-├── style.css           # Styling
-├── script.js           # Client-side functionality
-├── assets/             # Images, icons, and other assets
-└── Riaz_Aslam_Portfolio.pdf   # Resume (optional)
+├── index.html                  # Main portfolio website
+├── style.css                   # Custom modern design system & animations
+├── script.js                   # Client-side engine (Canvas, CLI, Project Store, Theme)
+├── profile photo.jpg           # High-resolution professional portrait
+├── Riaz_Aslam_Portfolio.pdf    # Official Resume PDF download
+└── README.md                   # Repository documentation
 ```
 
 ---
 
-## ✨ Features
+## 💻 Running Locally
 
-- 🎨 Modern and responsive design
-- 📱 Mobile-friendly layout
-- 💼 Professional project showcase
-- 🛠 Skills and technologies section
-- 📜 Certifications & achievements
-- 📄 Resume download
-- 📬 Contact form with Formspree support
-- ⚡ Smooth animations and interactive UI
-
----
-
-## 🛠 Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript (ES6)
-- Git & GitHub
-- GitHub Pages
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/riazaslam029/Riaz-Portfolio.git
+   ```
+2. Navigate into the directory:
+   ```bash
+   cd Riaz-Portfolio
+   ```
+3. Open `index.html` in any modern web browser, or launch with a lightweight dev server:
+   ```bash
+   npx serve .
+   ```
 
 ---
 
-# 🚀 Run Locally
+## 📬 Contact Setup (Formspree)
 
-Clone the repository:
-
-```bash
-git clone https://github.com/riazaslam029/Riaz-Portfolio.git
-```
-
-Navigate into the project:
-
-```bash
-cd Riaz-Portfolio
-```
-
-Open `index.html` in your browser.
+To enable automatic email delivery from the contact form without launching the visitor's mail client:
+1. Create a free form endpoint at [https://formspree.io/](https://formspree.io/)
+2. In `index.html`, set your endpoint:
+   ```javascript
+   window.CONTACT_CONFIG = {
+     provider: 'auto',
+     formspreeEndpoint: 'https://formspree.io/f/yourEndpointID'
+   };
+   ```
 
 ---
 
-# 🌍 Deploy on GitHub Pages
+## 👨‍💻 About Riaz Aslam
 
-### Initialize Git
-
-```bash
-git init
-git branch -M main
-git add .
-git commit -m "Initial commit — Portfolio"
-```
-
-### Using GitHub CLI (Recommended)
-
-```bash
-gh repo create riazaslam029/Riaz-Portfolio --public --source=. --remote=origin --push
-```
-
-### Or Create a Repository Manually
-
-Create an empty GitHub repository, then run:
-
-```bash
-git remote add origin https://github.com/<your-username>/<repo-name>.git
-git push -u origin main
-```
-
-After pushing:
-
-1. Open your GitHub repository.
-2. Go to **Settings → Pages**.
-3. Select:
-   - Branch: **main**
-   - Folder: **/(root)**
-4. Save.
-
-Your portfolio will be available at:
-
-**https://riazaslam029.github.io/Riaz-Portfolio/**
-
----
-
-# 📄 Resume
-
-To enable the **Download Resume** button, place:
-
-```
-Riaz_Aslam_Portfolio.pdf
-```
-
-in the project root directory.
-
----
-
-# 📬 Contact Form Setup
-
-This portfolio supports two methods for receiving messages.
-
-## Option 1 — Formspree (Recommended)
-
-1. Create a free account at https://formspree.io/
-2. Create a form.
-3. Copy your endpoint:
-
-```
-https://formspree.io/f/yourFormID
-```
-
-4. In `script.js`, configure:
-
-```javascript
-window.CONTACT_CONFIG = {
-    provider: "formspree",
-    formspreeEndpoint: "https://formspree.io/f/yourFormID"
-};
-```
-
-Messages will then be delivered directly to your email.
-
----
-
-## Option 2 — Mailto
-
-Without any setup, the contact form falls back to opening the visitor's email client with:
-
-**riazaslam029@gmail.com**
-
----
-
-# 👨‍💻 About Me
-
-I'm **Riaz Aslam**, a Software Engineering student passionate about building modern web applications and AI-powered solutions.
-
-My interests include:
-
-- Artificial Intelligence
-- Machine Learning
-- Full Stack Development
-- FastAPI
-- React
-- Python
-- Cloud Technologies
-- UI/UX Design
-
----
-
-## 🤝 Connect With Me
-
-🌐 Portfolio: https://riazaslam029.github.io/Riaz-Portfolio/
-
-💼 LinkedIn: https://www.linkedin.com/in/riazaslam029/
-
-💻 GitHub: https://github.com/riazaslam029
-
-📧 Email: riazaslam029@gmail.com
-
----
-
-## ⭐ Support
-
-If you found this project helpful or inspiring, consider giving it a ⭐ on GitHub. It helps support my work and encourages future projects.
-
-Thank you for visiting!
+- **Degree:** BS Software Engineering (BSSE), COMSATS University Islamabad, Lahore (2024–2028)
+- **Leadership:** Social Co-Lead @ Google Developer Groups on Campus (GDGoC)
+- **Certifications:** Google AI Essentials, Introduction to Git & GitHub
+- **Email:** [riazaslam029@gmail.com](mailto:riazaslam029@gmail.com)
+- **LinkedIn:** [https://www.linkedin.com/in/riazaslam/](https://www.linkedin.com/in/riazaslam/)
+- **GitHub:** [https://github.com/riazaslam029](https://github.com/riazaslam029)
