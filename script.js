@@ -22,7 +22,7 @@
       isLive: false,
       summary: 'A modern AI-powered academic management platform automating curriculum parsing, student attendance, quiz generation, and grading analytics.',
       challenge: 'Automating academic workflows with sub-second Gemini AI response times and resilient multi-tenant PostgreSQL schema.',
-      stack: ['React', 'FastAPI', 'PostgreSQL', 'Google Gemini AI', 'Python', 'Tailwind CSS'],
+      stack: ['React', 'Next.js', 'FastAPI', 'PostgreSQL', 'Google Gemini AI', 'Python', 'Tailwind CSS'],
       githubUrl: 'https://github.com/riazaslam029/acadexa-ai',
       liveUrl: null,
       architecture: {
@@ -66,7 +66,7 @@
       isLive: true,
       summary: 'An intelligent personalized study companion that generates adaptive task roadmaps, monitors focus sessions, and provides context-aware academic coaching.',
       challenge: 'Real-time adaptive task scheduling reacting dynamically to student learning curves and retention rates.',
-      stack: ['TypeScript', 'Next.js', 'React', 'Tailwind CSS', 'Vercel', 'AI APIs'],
+      stack: ['TypeScript', 'React', 'Next.js', 'Node.js', 'Tailwind CSS', 'Vercel', 'AI APIs'],
       githubUrl: 'https://github.com/riazaslam029/Personal-AI-Study-Coach-Kiro',
       liveUrl: 'https://personal-ai-study-coach-kiro.vercel.app',
       architecture: {
@@ -88,7 +88,7 @@
       isLive: false,
       summary: 'AI-powered Search Intelligence & Content Recommendation Platform built with Machine Learning, XGBoost, FastAPI, Streamlit, and DuckDB.',
       challenge: 'Querying and ranking millions of data entries with sub-millisecond OLAP latency using DuckDB and gradient-boosted trees.',
-      stack: ['Python', 'XGBoost', 'DuckDB', 'FastAPI', 'Streamlit', 'Scikit-Learn'],
+      stack: ['Python', 'Machine Learning', 'XGBoost', 'DuckDB', 'FastAPI', 'Streamlit', 'Scikit-Learn'],
       githubUrl: 'https://github.com/riazaslam029/RankPilot-AI',
       liveUrl: null,
       architecture: {
@@ -110,7 +110,7 @@
       isLive: true,
       summary: 'Full-stack enterprise inventory platform with real-time stock notifications, dynamic sales forecasting, and interactive financial dashboards.',
       challenge: 'Handling real-time inventory decrement concurrency during high-velocity checkout simulations.',
-      stack: ['TypeScript', 'React', 'Node.js', 'Tailwind CSS', 'Vercel'],
+      stack: ['TypeScript', 'React', 'Node.js', 'Tailwind CSS', 'Vercel', 'REST APIs'],
       githubUrl: 'https://github.com/riazaslam029/Smart-Inventory-and-Sales-Management-System',
       liveUrl: 'https://smart-inventory-and-sales-managemen-omega.vercel.app',
       architecture: {
@@ -132,7 +132,7 @@
       isLive: false,
       summary: 'AI-powered GitHub Documentation Assistant using Amazon Bedrock foundation models to generate comprehensive architecture docs and READMEs.',
       challenge: 'Parsing complex multi-directory repositories into concise AST representations without exceeding model context limits.',
-      stack: ['Python', 'Amazon Bedrock', 'GitHub REST API', 'AST Parsing', 'Markdown'],
+      stack: ['Python', 'Amazon Bedrock', 'GitHub REST API', 'AST Parsing', 'Markdown', 'LLM'],
       githubUrl: 'https://github.com/riazaslam029/RepoDoc-AI',
       liveUrl: null,
       architecture: {
@@ -304,7 +304,7 @@
   }
 
   /* --------------------------------------------------------------------------
-     2. THEME MANAGER (Persisted Dark/Light toggle)
+     3. THEME MANAGER (Persisted Dark/Light toggle)
      -------------------------------------------------------------------------- */
   class ThemeManager {
     constructor() {
@@ -340,7 +340,7 @@
   }
 
   /* --------------------------------------------------------------------------
-     3. PROJECT MANAGER (Filter, Search, and Architecture Deep Dive)
+     4. PROJECT MANAGER (Filter, Search, and Architecture Deep Dive)
      -------------------------------------------------------------------------- */
   class ProjectManager {
     constructor() {
@@ -558,7 +558,7 @@
   }
 
   /* --------------------------------------------------------------------------
-     4. INTERACTIVE DEVELOPER CLI / TERMINAL (riaz-cli)
+     5. INTERACTIVE DEVELOPER CLI / TERMINAL (riaz-cli)
      -------------------------------------------------------------------------- */
   class TerminalCLI {
     constructor() {
@@ -579,7 +579,7 @@
   <span style="color: var(--accent-cyan)">projects</span>   — View flagship engineering projects
   <span style="color: var(--accent-cyan)">skills</span>     — View software engineering tech stack
   <span style="color: var(--accent-cyan)">edu</span>        — COMSATS University & academic record
-  <span style="color: var(--accent-cyan)">exp</span>        — GDGoC leadership & experiences
+  <span style="color: var(--accent-cyan)">exp</span>        — Manafa, GDGoC, Loop Lab & Alkhidmat roles
   <span style="color: var(--accent-cyan)">hire</span>       — Why recruiters & tech leads hire Riaz
   <span style="color: var(--accent-cyan)">contact</span>    — Direct email and social links
   <span style="color: var(--accent-cyan)">cat resume</span> — View summary of software engineering resume
@@ -592,20 +592,21 @@
 <span class="terminal-line success">Flagship Repositories:</span>
 1. <span style="color: var(--accent-cyan)">Acadexa AI</span> — AI-powered Academic Management (FastAPI + React + Gemini)
 2. <span style="color: var(--accent-cyan)">CacheForge</span> — Embedded Storage Engine (Python, WAL, B-Tree, Crash Recovery)
-3. <span style="color: var(--accent-cyan)">Personal AI Study Coach</span> — Live on Vercel (Next.js, TypeScript)
+3. <span style="color: var(--accent-cyan)">Personal AI Study Coach</span> — Live on Vercel (TypeScript, Next.js, React)
 4. <span style="color: var(--accent-cyan)">RankPilot AI</span> — Search & Recommendation Engine (XGBoost, DuckDB)
-5. <span style="color: var(--accent-cyan)">Smart Inventory System</span> — Live on Vercel (TypeScript, React)
-6. <span style="color: var(--accent-cyan)">C++ DSA Social Network</span> — Custom Graph/Queue implementations (C++, Qt)
+5. <span style="color: var(--accent-cyan)">Smart Inventory System</span> — Live on Vercel (TypeScript, React, Node.js)
+6. <span style="color: var(--accent-cyan)">RepoDoc AI</span> — GitHub Documentation Assistant (Amazon Bedrock GenAI)
+7. <span style="color: var(--accent-cyan)">C++ DSA Social Network</span> — Custom Graph/Queue implementations (C++, Qt)
 <span style="color: var(--text-muted)">Type 'help' for other commands.</span>
         `,
 
         skills: () => `
 <span class="terminal-line success">Technical Competencies:</span>
-• <strong style="color: var(--accent-cyan)">Languages:</strong> Python, C++, Java, TypeScript, JavaScript (ES6+), SQL
-• <strong style="color: var(--accent-cyan)">Systems & DSA:</strong> B-Trees, Graph Theory (BFS/DFS), WAL, OOP, Memory Handling
-• <strong style="color: var(--accent-cyan)">AI & ML:</strong> Google Gemini API, Amazon Bedrock, Scikit-Learn, XGBoost, DuckDB
-• <strong style="color: var(--accent-cyan)">Web Stack:</strong> React, Next.js, FastAPI, Node.js, Tailwind CSS, Streamlit
-• <strong style="color: var(--accent-cyan)">Tools & Cloud:</strong> Git, GitHub, Linux, Vercel, VS Code
+• <strong style="color: var(--accent-cyan)">Modern Full-Stack:</strong> React, Next.js, Node.js, TypeScript, JavaScript (ES6+), FastAPI, Tailwind CSS, PostgreSQL
+• <strong style="color: var(--accent-cyan)">Languages & CS:</strong> Python, C++, Java, SQL, Data Structures & Algorithms (DSA), OOP, Memory Internals
+• <strong style="color: var(--accent-cyan)">AI & Machine Learning:</strong> Google Gemini AI API, Amazon Bedrock, Scikit-Learn, XGBoost, DuckDB, Pandas, NumPy
+• <strong style="color: var(--accent-cyan)">Systems & Architecture:</strong> Storage Engines (WAL), B-Trees, Graph Theory (BFS/DFS), Microservices, REST APIs
+• <strong style="color: var(--accent-cyan)">DevOps & Tooling:</strong> Git, GitHub, Linux, Vercel Edge, Postman, Docker basics
         `,
 
         edu: () => `
@@ -620,18 +621,23 @@
 
         exp: () => `
 <span class="terminal-line success">Leadership & Experience:</span>
-• <strong>Social Co-Lead</strong> @ GDGoC (Google Developer Groups on Campus) — Sep 2025–Present
-  Spearheading tech community engagement, workshops, and developer meetups.
-• <strong>Active Contributor</strong> @ Tech Hierarchy — 2024–2025
-• <strong>Freelance Content & Video Production</strong> — Technical storytelling & developer outreach.
+• <strong>Campus Ambassador</strong> @ Manafa — 2025–Present
+  Leading university outreach, technical advocacy, and student growth programs.
+• <strong>Social Co-Lead</strong> @ GDGoC (Google Developer Groups on Campus), COMSATS — Sep 2025–Present
+  Spearheading developer community events, technical workshops, and hackathons.
+• <strong>Social Media Lead</strong> @ Loop Lab
+  Managing technical communication, digital brand storytelling, and developer media.
+• <strong>Volunteer Management Intern</strong> @ Alkhidmat Foundation
+  Coordinated volunteer operations, social community drives, and logistics.
+• <strong>Freelance Technical Storyteller & Video Creator</strong>
         `,
 
         hire: () => `
 <span class="terminal-line success">Why Recruiters Hire Riaz Aslam:</span>
-✔ Strong theoretical CS foundations (C++, Data Structures, Memory & Storage Internals)
-✔ Proven ability to ship full-stack AI applications (React + FastAPI + Gemini + Cloud)
-✔ High academic track record (1081/1100 FSc, top tier BSSE)
-✔ Active developer community leadership (GDGoC Social Co-Lead)
+✔ Strong theoretical CS foundations (C++, Data Structures, Storage Internals)
+✔ Proven ability to ship production full-stack AI apps (React + Node + FastAPI + Gemini)
+✔ Demonstrated campus & community leadership (Manafa Ambassador, GDGoC Co-Lead, Loop Lab Lead)
+✔ High academic track record (1081/1100 FSc A+, top tier BSSE)
 ✔ Ready for Immediate Software Engineering Internships (2026/2027)
         `,
 
@@ -645,7 +651,8 @@
 
         'cat resume': () => `
 <span class="terminal-line success">=== RIAZ ASLAM | SOFTWARE ENGINEERING ===</span>
-BSSE @ COMSATS (3rd Year) | Specialization: AI & Systems Software
+BSSE @ COMSATS (3rd Year) | Specialization: Full-Stack, AI & Systems Software
+Manafa Campus Ambassador | GDGoC Social Co-Lead
 Portfolio: https://riazaslam029.github.io/Riaz-Portfolio/
 [Resume PDF file is available for instant download in the navigation bar.]
         `,
@@ -771,19 +778,30 @@ Portfolio: https://riazaslam029.github.io/Riaz-Portfolio/
   }
 
   /* --------------------------------------------------------------------------
-     5. GITHUB LIVE SYNC (Dynamic repository loader with robust fallback)
+     6. GITHUB LIVE SYNC (Excluded specific repos as requested)
      -------------------------------------------------------------------------- */
+  const EXCLUDED_REPOS = [
+    'fly-rank-ml-assignment1',
+    'smart-password-checker',
+    'skills-build-applications-w-copilot-agent-mode',
+    'badge-repo',
+    'first-contributions',
+    'login-registration-system',
+    'riazaslam029',
+    'riaz-portfolio'
+  ];
+
   async function loadGitHubLiveRepos(username = 'riazaslam029') {
     const container = document.getElementById('githubLiveGrid');
     if (!container) return;
 
     try {
-      const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=12`);
+      const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=25`);
       if (!response.ok) throw new Error('Status: ' + response.status);
 
       const repos = await response.json();
       const validRepos = repos
-        .filter((r) => !r.fork && r.name !== 'Riaz-Portfolio')
+        .filter((r) => !r.fork && !EXCLUDED_REPOS.includes(r.name.toLowerCase()))
         .slice(0, 6);
 
       if (validRepos.length === 0) return;
@@ -819,12 +837,11 @@ Portfolio: https://riazaslam029.github.io/Riaz-Portfolio/
         .join('');
     } catch (e) {
       console.warn('GitHub API sync note:', e.message);
-      // Clean fallback: Keep default flagship projects prominently visible
     }
   }
 
   /* --------------------------------------------------------------------------
-     6. CONTACT MANAGER (1-click copy email & Formspree / Mailto pipeline)
+     7. CONTACT MANAGER (1-click copy email & Formspree / Mailto pipeline)
      -------------------------------------------------------------------------- */
   class ContactManager {
     constructor() {
@@ -837,7 +854,6 @@ Portfolio: https://riazaslam029.github.io/Riaz-Portfolio/
     }
 
     init() {
-      // Copy email listeners
       this.copyBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
           const email = btn.dataset.email || 'riazaslam029@gmail.com';
@@ -847,7 +863,6 @@ Portfolio: https://riazaslam029.github.io/Riaz-Portfolio/
         });
       });
 
-      // Form submit listener
       if (this.form) {
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
       }
@@ -921,10 +936,9 @@ Portfolio: https://riazaslam029.github.io/Riaz-Portfolio/
   }
 
   /* --------------------------------------------------------------------------
-     7. SCROLL OBSERVER & NAVIGATION
+     8. SCROLL OBSERVER & NAVIGATION
      -------------------------------------------------------------------------- */
   function initScrollAndNav() {
-    // Reveal animations
     const reveals = document.querySelectorAll('.fade-in-up');
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(
@@ -942,7 +956,6 @@ Portfolio: https://riazaslam029.github.io/Riaz-Portfolio/
       reveals.forEach((el) => el.classList.add('active'));
     }
 
-    // Active nav highlighting
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
 
@@ -963,7 +976,6 @@ Portfolio: https://riazaslam029.github.io/Riaz-Portfolio/
       });
     });
 
-    // Mobile nav drawer toggle
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const drawer = document.getElementById('mobileNavDrawer');
     if (mobileBtn && drawer) {
@@ -977,7 +989,6 @@ Portfolio: https://riazaslam029.github.io/Riaz-Portfolio/
       });
     }
 
-    // Dynamic Year
     const yearEl = document.getElementById('yearSpan');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
@@ -987,7 +998,7 @@ Portfolio: https://riazaslam029.github.io/Riaz-Portfolio/
   }
 
   /* --------------------------------------------------------------------------
-     8. ENTRY POINT
+     9. ENTRY POINT
      -------------------------------------------------------------------------- */
   document.addEventListener('DOMContentLoaded', () => {
     new HeroCanvas('heroCanvas');
