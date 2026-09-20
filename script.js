@@ -201,9 +201,9 @@
       if (!this.canvas) return;
       this.ctx = this.canvas.getContext('2d');
       this.particles = [];
-      this.numParticles = window.innerWidth < 768 ? 45 : 90;
-      this.maxDistance = 140;
-      this.mouse = { x: null, y: null, radius: 160 };
+      this.numParticles = window.innerWidth < 640 ? 28 : (window.innerWidth < 768 ? 45 : 85);
+      this.maxDistance = window.innerWidth < 640 ? 100 : 140;
+      this.mouse = { x: null, y: null, radius: window.innerWidth < 640 ? 110 : 160 };
 
       this.init();
     }
@@ -223,6 +223,19 @@
         this.mouse.y = null;
       });
 
+      window.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches.length > 0) {
+          const rect = this.canvas.getBoundingClientRect();
+          this.mouse.x = e.touches[0].clientX - rect.left;
+          this.mouse.y = e.touches[0].clientY - rect.top;
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchend', () => {
+        this.mouse.x = null;
+        this.mouse.y = null;
+      }, { passive: true });
+
       this.createParticles();
       this.animate();
     }
@@ -230,7 +243,8 @@
     resize() {
       this.width = this.canvas.width = this.canvas.parentElement.offsetWidth;
       this.height = this.canvas.height = this.canvas.parentElement.offsetHeight;
-      this.numParticles = this.width < 768 ? 45 : 85;
+      this.numParticles = this.width < 640 ? 28 : (this.width < 768 ? 45 : 85);
+      this.maxDistance = this.width < 640 ? 100 : 140;
       if (this.particles.length === 0) this.createParticles();
     }
 
@@ -699,6 +713,16 @@ Portfolio: https://riazaslam029.github.io/Riaz-Portfolio/
         });
       }
 
+      // Quick command chips (one-tap mobile execution)
+      document.querySelectorAll('.term-chip').forEach((chip) => {
+        chip.addEventListener('click', () => {
+          const cmd = chip.dataset.cmd;
+          if (cmd) {
+            this.handleCommand(cmd);
+          }
+        });
+      });
+
       if (this.input) {
         this.input.addEventListener('keydown', (e) => {
           if (e.key === 'Enter') {
@@ -726,7 +750,10 @@ Portfolio: https://riazaslam029.github.io/Riaz-Portfolio/
     open() {
       if (this.backdrop) {
         this.backdrop.classList.add('open');
-        setTimeout(() => this.input && this.input.focus(), 150);
+        // On desktop/tablet, autofocus the terminal input; on small phones, avoid jumping the viewport
+        if (window.innerWidth >= 768) {
+          setTimeout(() => this.input && this.input.focus(), 150);
+        }
       }
     }
 

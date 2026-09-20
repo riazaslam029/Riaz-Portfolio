@@ -55,10 +55,11 @@ Welcome to the official portfolio of **Riaz Aslam**, a 3rd-year Software Enginee
 ## 👨‍💻 Experience & Leadership
 
 - **Campus Ambassador** — Manafa (2025–Present)
+- **AI/ML Intern** — FlyRank (May 2026–Aug 2026)
 - **Social Co-Lead** — Google Developer Groups on Campus (GDGoC), COMSATS Lahore (Sep 2025–Present)
 - **Social Media Lead** — Loop Lab (2025–Present)
 - **Volunteer Management Intern** — Alkhidmat Foundation Pakistan
-- **Education:** BS Software Engineering (BSSE), COMSATS University Islamabad, Lahore (2024–2028, 3rd Year)
+- **Education:** BS Software Engineering (BSSE), COMSATS University Islamabad, Lahore (CGPA: 3.63/4.00, 2024–2028, 3rd Year)
 - **Email:** [riazaslam029@gmail.com](mailto:riazaslam029@gmail.com)
 - **LinkedIn:** [https://www.linkedin.com/in/riazaslam/](https://www.linkedin.com/in/riazaslam/)
 - **GitHub:** [https://github.com/riazaslam029](https://github.com/riazaslam029)
